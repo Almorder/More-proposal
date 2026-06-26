@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | Journal & Archives</title>
+    <title>MORE | Archives</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
@@ -11,59 +11,250 @@
     <script defer type="module" src="./src/main.js"></script>
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="site-header">
-      <a href="./index.html" class="logo-left">
-        <img src="./images/logo-dark.png" alt="MORE" />
-      </a>
-      <nav class="nav-links">
-        <a href="./experiences.html">Expériences</a>
-        <a href="./destinations.html">Destinations</a>
-        <a href="./journal.html">Journal</a>
-        <a href="./vision.html">À propos</a>
-        <a href="./contact.html" class="nav-inquire">Inquire</a>
-      </nav>
-      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
+    <!-- TRANSPARENT HEADER -->
+    <header class="home-header">
+      <div class="home-header-left">
+        <span>MORE</span>
+      </div>
+      <div class="home-header-center">
+        <a href="./index.html">
+          <img src="./images/logo-light.png" alt="MORE" />
+        </a>
+      </div>
+      <div class="home-header-right">
+        <nav class="transparent-nav">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./journal.html" style="border-bottom: 1px solid var(--white); padding-bottom: 2px;">Archives</a>
+          <a href="./vision.html">À propos</a>
+          <a href="./contact.html" class="transparent-inquire">Inquire</a>
+        </nav>
+        <span class="home-hamburger" id="mobile-menu-open">≡</span>
+      </div>
     </header>
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- OVERLAY MENU (Mobile) -->
     <div class="overlay-menu" id="overlay-menu">
       <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
-      <a href="./journal.html">Journal</a>
+      <a href="./journal.html">Archives</a>
       <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <main class="container" style="padding-top: 4rem;">
-      <div class="text-center" style="margin-bottom: 4rem;">
-        <h1 style="margin-bottom: 1rem;">Archives</h1>
-        <p style="color: var(--blue-night);">Des moments vécus. Des souvenirs laissés.</p>
+    <!-- ARCHIVES HERO -->
+    <section class="home-hero archives-hero">
+      <div class="home-hero-bg archives-hero-bg">
+        <img src="./images/3.jpeg" alt="Couple from back" class="img-cover" style="object-position: center 30%;" />
+      </div>
+      <div class="home-hero-content">
+        <h1 style="font-size: clamp(4rem, 6vw, 6rem); margin-bottom: 1rem;">Archives</h1>
+        <p style="font-family: var(--font-h1-h2); font-style: italic; font-size: 1.5rem;">Des moments vécus. Des souvenirs laissés.</p>
+      </div>
+    </section>
+
+    <!-- FILTER TABS -->
+    <div class="archives-tabs">
+      <span class="active">IMAGES</span>
+      <span>FILMS</span>
+      <span>PARTAGES</span>
+      <span>MOTS</span>
+    </div>
+
+    <!-- MAIN MASONRY -->
+    <main class="archives-masonry">
+      <!-- Col 1 (Large + 2 Squares) -->
+      <div class="am-col am-col-1">
+        <a href="#" class="am-item aspect-landscape" style="aspect-ratio: 16/10;">
+          <img src="./images/2.jpeg" alt="Candlelit dinner" />
+        </a>
+        <div style="display:flex; gap:1vw;">
+          <a href="#" class="am-item aspect-square" style="flex:1;">
+            <div class="play-btn"></div>
+            <img src="./images/4.jpeg" alt="Pool" style="filter: grayscale(100%);" />
+          </a>
+          <a href="#" class="am-item aspect-square" style="flex:1;">
+            <img src="./images/1.jpeg" alt="Night view" />
+          </a>
+        </div>
       </div>
 
-      <!-- MASONRY GRID -->
-      <div class="masonry-clean">
-        <div class="masonry-item">
-          <img src="./images/1.jpeg" class="img-cover" alt="Archive 1" />
-        </div>
-        <div class="masonry-item">
-          <img src="./images/2.jpeg" class="img-cover" alt="Archive 2" />
-        </div>
-        <div class="masonry-item">
-          <img src="./images/3.jpeg" class="img-cover" alt="Archive 3" />
-        </div>
-        <div class="masonry-item">
-          <img src="./images/4.jpeg" class="img-cover" alt="Archive 4" />
-        </div>
-        <div class="masonry-item">
-          <img src="./images/5.jpeg" class="img-cover" alt="Archive 5" />
-        </div>
-        <div class="masonry-item">
-          <img src="./images/6.jpeg" class="img-cover" alt="Archive 6" />
-        </div>
+      <!-- Col 2 (Portrait + Square) -->
+      <div class="am-col am-col-2">
+        <a href="#" class="am-item aspect-portrait">
+          <div class="play-btn"></div>
+          <img src="./images/3.jpeg" alt="Couple walking" />
+        </a>
+        <a href="#" class="am-item aspect-square">
+          <img src="./images/5.jpeg" alt="Pool view" />
+        </a>
+      </div>
+
+      <!-- Col 3 (Square + Square) -->
+      <div class="am-col am-col-3">
+        <a href="#" class="am-item aspect-square">
+          <img src="./images/8.jpeg" alt="Boat" />
+        </a>
+        <a href="#" class="am-item aspect-square" style="flex: 1.5;">
+          <img src="./images/6.jpeg" alt="Coast" />
+        </a>
+      </div>
+
+      <!-- Col 4 (Stories) -->
+      <div class="am-col am-col-4">
+        <a href="#" class="am-item aspect-story story-card">
+          <img src="./images/3.jpeg" alt="Story" style="filter: grayscale(100%);" />
+          <div class="story-header">
+            <div class="story-user">
+              <img src="./images/7.jpeg" class="story-avatar" />
+              <span>clara.ven</span> <span style="opacity:0.5;">2h</span>
+            </div>
+            <span>✕</span>
+          </div>
+          <div class="story-footer">
+            <p class="story-text">Un rêve devenu réalité<br><span style="text-decoration:underline;">@more.experiences</span></p>
+            <div class="story-input">
+              <span>Envoyer un message</span>
+              <span>♡ ➦</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="am-item aspect-story story-card">
+          <img src="./images/5.jpeg" alt="Story" style="filter: grayscale(100%);" />
+          <div class="story-header">
+            <div class="story-user">
+              <img src="./images/7.jpeg" class="story-avatar" />
+              <span>jules_prv</span> <span style="opacity:0.5;">5h</span>
+            </div>
+            <span>✕</span>
+          </div>
+          <div class="story-footer">
+            <p class="story-text">Merci MORE<br>pour ce moment suspendu</p>
+            <div class="story-input">
+              <span>Envoyer un message</span>
+              <span>♡ ➦</span>
+            </div>
+          </div>
+        </a>
       </div>
     </main>
+
+    <!-- VU PAR EUX (INSTA POSTS) -->
+    <section class="container" style="padding-bottom: 2rem;">
+      <div class="section-header">
+        <h2>Vu par eux</h2>
+        <a href="#">VOIR PLUS ⟶</a>
+      </div>
+      <div class="insta-grid">
+        <!-- Post 1 -->
+        <div class="insta-card">
+          <div class="insta-header">
+            <div class="insta-user"><img src="./images/7.jpeg" /> sarah_dmn <span>1h</span></div>
+            <span style="color:var(--graphite);">...</span>
+          </div>
+          <div class="insta-img"><img src="./images/4.jpeg" class="img-cover" /></div>
+          <div class="insta-footer">
+            <p>Amalfi Coast</p>
+            <span>Marriage Proposal</span>
+          </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="insta-card">
+          <div class="insta-header">
+            <div class="insta-user"><img src="./images/7.jpeg" /> mathis_ibr <span>2h</span></div>
+            <span style="color:var(--graphite);">...</span>
+          </div>
+          <div class="insta-img"><img src="./images/2.jpeg" class="img-cover" /></div>
+          <div class="insta-footer">
+            <p>Lake Como</p>
+            <span>Anniversary Experience</span>
+          </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="insta-card">
+          <div class="insta-header">
+            <div class="insta-user"><img src="./images/7.jpeg" /> emma.fit <span>2h</span></div>
+            <span style="color:var(--graphite);">...</span>
+          </div>
+          <div class="insta-img"><img src="./images/5.jpeg" class="img-cover" /></div>
+          <div class="insta-footer">
+            <p>Santorini</p>
+            <span>Romantic Escape</span>
+          </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="insta-card">
+          <div class="insta-header">
+            <div class="insta-user"><img src="./images/7.jpeg" /> leo_brn <span>4h</span></div>
+            <span style="color:var(--graphite);">...</span>
+          </div>
+          <div class="insta-img"><img src="./images/2.jpeg" class="img-cover" /></div>
+          <div class="insta-footer">
+            <p>Provence</p>
+            <span>Luxury Celebration</span>
+          </div>
+        </div>
+        <!-- Post 5 -->
+        <div class="insta-card">
+          <div class="insta-header">
+            <div class="insta-user"><img src="./images/7.jpeg" /> inesmdl <span>5h</span></div>
+            <span style="color:var(--graphite);">...</span>
+          </div>
+          <div class="insta-img"><img src="./images/8.jpeg" class="img-cover" /></div>
+          <div class="insta-footer">
+            <p>Marrakech</p>
+            <span>Celebration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEURS MOTS (TESTIMONIALS) -->
+    <section class="container" style="padding-bottom: 2rem;">
+      <div class="section-header">
+        <h2>Leurs mots</h2>
+        <a href="#">VOIR PLUS ⟶</a>
+      </div>
+      <div class="testimonial-grid">
+        <!-- Testi 1 -->
+        <div class="testi-card">
+          <div class="testi-header">
+            <p>C & J</p>
+            <span>Amalfi Coast<br>Marriage Proposal<br>12.05.2024</span>
+          </div>
+          <p class="testi-quote">"Je pensais lui offrir une demande. MORE a créé un souvenir que nous garderons toute notre vie."</p>
+          <span class="testi-footer">Avis vérifié</span>
+        </div>
+        <!-- Testi 2 -->
+        <div class="testi-card">
+          <div class="testi-header">
+            <p>M & A</p>
+            <span>Lake Como<br>Anniversary Experience<br>21.06.2024</span>
+          </div>
+          <p class="testi-quote">"Tout était parfait, discret, élégant, émotionnel. Nous n'aurions pas pu rêver mieux."</p>
+          <span class="testi-footer">Avis vérifié</span>
+        </div>
+        <!-- Testi 3 -->
+        <div class="testi-card">
+          <div class="testi-header">
+            <p>L & P</p>
+            <span>Paris<br>Luxury Celebration<br>03.07.2024</span>
+          </div>
+          <p class="testi-quote">"Une soirée magique, pensée dans les moindres détails. Inoubliable."</p>
+          <span class="testi-footer">Avis vérifié</span>
+        </div>
+        <!-- Testi 4 -->
+        <div class="testi-card">
+          <div class="testi-header">
+            <p>S & N</p>
+            <span>Santorini<br>Romantic Escape<br>18.07.2024</span>
+          </div>
+          <p class="testi-quote">"Un moment suspendu, juste nous et la beauté de l'instant."</p>
+          <span class="testi-footer">Avis vérifié</span>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="site-footer">
