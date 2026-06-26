@@ -3,9 +3,29 @@ import './style.css';
 document.addEventListener('DOMContentLoaded', () => {
     console.log('MORE Experiences initialized (Gen Z Rich).');
 
+    // Mobile Menu Logic
+    const menuOpen = document.getElementById('mobile-menu-open');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    if (menuOpen && overlayMenu) {
+        menuOpen.addEventListener('click', () => {
+            overlayMenu.classList.add('active');
+            if (typeof lenis !== 'undefined') lenis.stop();
+        });
+    }
+
+    if (menuClose && overlayMenu) {
+        menuClose.addEventListener('click', () => {
+            overlayMenu.classList.remove('active');
+            if (typeof lenis !== 'undefined') lenis.start();
+        });
+    }
+
     // Initialize Lenis for Smooth Scroll
+    let lenis;
     if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
+        lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
@@ -31,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.ticker.lagSmoothing(0)
         }
     }
+
+    // FOUC Prevention: Remove loading class once ready
+    document.body.classList.remove('js-loading');
+    document.body.classList.add('js-loaded');
 
     // GSAP Animations
     if (typeof gsap !== 'undefined') {

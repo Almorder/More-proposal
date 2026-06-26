@@ -9,33 +9,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="/src/style.css" />
-    <!-- Scripts -->
-    <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <!-- Scripts (defer to prevent blocking) -->
+    <script defer src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body class="dark-theme">
+  <body class="dark-theme js-loading">
     <!-- Mega Navbar Immersive -->
     <header class="site-header">
       <div class="header-container">
         <nav class="nav-left">
-          <a href="/experiences.html">Expériences</a>
-          <a href="/destinations.html">Destinations</a>
-          <a href="/journal.html">Journal</a>
-          <a href="/vision.html">À propos</a>
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./journal.html">Journal</a>
+          <a href="./vision.html">À propos</a>
         </nav>
-        <a href="/" class="logo-center">
-          <img src="/images/logo-light.png" alt="MORE" />
+        <a href="./index.html" class="logo-center">
+          <img src="./images/logo-light.png" alt="MORE" />
         </a>
         <div class="nav-right">
-          <a href="/contact.html" class="nav-inquire">Inquire</a>
+          <a href="./contact.html" class="nav-inquire">Inquire</a>
         </div>
+        <!-- Mobile Menu Trigger -->
+        <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
       </div>
     </header>
 
+    <!-- Mobile Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu">
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <a href="./experiences.html">Expériences</a>
+      <a href="./destinations.html">Destinations</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./vision.html">À propos</a>
+      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+    </div>
+
     <!-- WhatsApp CTA Float -->
-    <a href="https://wa.me/1234567890" class="whatsapp-cta">
+    <a href="https://wa.me/33667942463" target="_blank" class="whatsapp-cta">
       <span>Contactez-nous</span>
     </a>
 
@@ -43,12 +56,12 @@
       <!-- Section 1: Hero Immersif Organique -->
       <section class="hero-organic">
         <div class="hero-image-wrapper" data-speed="0.8">
-          <img src="/images/1.jpeg" alt="Hero Background" class="img-cover hero-img" />
+          <img src="./images/1.jpeg" alt="Hero Background" class="img-cover hero-img" />
           <div class="overlay-dark"></div>
         </div>
         <div class="hero-content">
           <h1 class="stagger-text">Des moments<br>assez beaux<br>pour devenir<br>des souvenirs.</h1>
-          <a href="/contact.html" class="btn-organic fade-in">Begin your story</a>
+          <a href="./contact.html" class="btn-organic fade-in">Begin your story</a>
         </div>
       </section>
 
@@ -67,28 +80,28 @@
             <div class="organic-card mt-xl reveal-img">
               <p class="overline">STORIES <span class="line-h"></span></p>
               <div class="img-wrapper portrait">
-                <img src="/images/2.jpeg" class="img-cover" />
+                <img src="./images/2.jpeg" class="img-cover" />
               </div>
               <h2>The beginning<br>of forever</h2>
-              <a href="/product.html" class="link-arrow">Read story ⟶</a>
+              <a href="./product.html" class="link-arrow">Read story ⟶</a>
             </div>
 
             <div class="organic-card mt-sm reveal-img">
               <p class="overline">DESTINATIONS <span class="line-h"></span></p>
               <div class="img-wrapper landscape">
-                <img src="/images/4.jpeg" class="img-cover" />
+                <img src="./images/4.jpeg" class="img-cover" />
               </div>
               <h2>Lake Como<br>Timeless by nature</h2>
-              <a href="/destinations.html" class="link-arrow">Discover ⟶</a>
+              <a href="./destinations.html" class="link-arrow">Discover ⟶</a>
             </div>
 
             <div class="organic-card mt-lg reveal-img">
               <p class="overline">MOMENTS <span class="line-h"></span></p>
               <div class="img-wrapper square">
-                <img src="/images/6.jpeg" class="img-cover" />
+                <img src="./images/6.jpeg" class="img-cover" />
               </div>
               <h2>Details that<br>stay with you</h2>
-              <a href="/journal.html" class="link-arrow">View moments ⟶</a>
+              <a href="./journal.html" class="link-arrow">View moments ⟶</a>
             </div>
           </div>
         </div>
@@ -109,21 +122,21 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-col">
-            <img src="/images/logo-light.png" class="footer-logo" />
+            <img src="./images/logo-light.png" class="footer-logo" />
             <p>Maison de création d'expériences<br>romantiques premium.</p>
           </div>
           <div class="footer-col">
             <h4>Explore</h4>
-            <a href="/experiences.html">Expériences</a>
-            <a href="/destinations.html">Destinations</a>
-            <a href="/journal.html">Journal</a>
-            <a href="/vision.html">L'Histoire</a>
+            <a href="./experiences.html">Expériences</a>
+            <a href="./destinations.html">Destinations</a>
+            <a href="./journal.html">Journal</a>
+            <a href="./vision.html">L'Histoire</a>
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
             <a href="mailto:contact@more.com">contact@more.com</a>
             <a href="#">@more.experiences</a>
-            <a href="#">WhatsApp</a>
+            <a href="https://wa.me/33667942463">WhatsApp</a>
           </div>
         </div>
         <div class="footer-bottom">
@@ -132,7 +145,5 @@
         </div>
       </div>
     </footer>
-
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
+  <body class="js-loading">
     <!-- Navbar / Header Immersif (Dark text for light background if needed, but we'll use a hero image) -->
     <header class="site-header header-light">
       <div class="header-brand">
@@ -19,12 +19,23 @@
         <img src="/images/logo-light.png" alt="MORE Logo" />
       </div>
       <nav class="main-nav">
-        <a href="/vision.html">About</a>
-        <a href="/experiences.html">Expériences</a>
-        <a href="/memory.html">Journal</a>
-        <a href="/contact.html" class="nav-inquire">Inquire</a>
+        <a href="./vision.html">About</a>
+        <a href="./experiences.html">Expériences</a>
+        <a href="./memory.html">Journal</a>
+        <a href="./contact.html" class="nav-inquire">Inquire</a>
       </nav>
     </header>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu">
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <a href="./experiences.html">Expériences</a>
+      <a href="./destinations.html">Destinations</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./vision.html">À propos</a>
+      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+    </div>
+
 
     <main id="app">
       <!-- Section 1: Hero Experiences -->
@@ -50,7 +61,7 @@
             <li style="padding:1rem 0; font-size:1.1rem; border-bottom:1px solid var(--gray-line-light);">Organisation & Scénographie</li>
             <li style="padding:1rem 0; font-size:1.1rem; border-bottom:1px solid var(--gray-line-light);">Captation visuelle & Film souvenir</li>
           </ul>
-          <a href="/contact.html" class="btn-story" style="margin-top:3rem; color:var(--graphite); border-color:var(--graphite);">PLANIFIER UNE CONSULTATION</a>
+          <a href="./contact.html" class="btn-story" style="margin-top:3rem; color:var(--graphite); border-color:var(--graphite);">PLANIFIER UNE CONSULTATION</a>
         </div>
       </section>
 
@@ -81,6 +92,6 @@
         </div>
       </section>
     </main>
-    <script type="module" src="/src/main.js"></script>
+    <script defer type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -11,31 +11,44 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/src/style.css" />
     <!-- Scripts -->
-    <script src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
-  <body class="dark-theme">
+  <body class="dark-theme js-loading">
     <!-- Mega Navbar Immersive -->
     <header class="site-header">
       <div class="header-container">
         <nav class="nav-left">
-          <a href="/experiences.html">Expériences</a>
-          <a href="/destinations.html">Destinations</a>
-          <a href="/journal.html">Journal</a>
-          <a href="/vision.html">À propos</a>
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./journal.html">Journal</a>
+          <a href="./vision.html">À propos</a>
         </nav>
-        <a href="/" class="logo-center">
+        <a href="./index.html" class="logo-center">
           <img src="/images/logo-light.png" alt="MORE" />
         </a>
         <div class="nav-right">
-          <a href="/contact.html" class="nav-inquire">Inquire</a>
+          <a href="./contact.html" class="nav-inquire">Inquire</a>
         </div>
+        <!-- Mobile Menu Trigger -->
+        <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
       </div>
     </header>
 
+    <!-- Mobile Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu">
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <a href="./experiences.html">Expériences</a>
+      <a href="./destinations.html">Destinations</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./vision.html">À propos</a>
+      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+    </div>
+
+
     <!-- WhatsApp CTA Float -->
-    <a href="https://wa.me/1234567890" class="whatsapp-cta">
+    <a href="https://wa.me/33667942463" target="_blank" class="whatsapp-cta">
       <span>Contactez-nous</span>
     </a>
 
@@ -50,7 +63,7 @@
           <p class="overline fade-in" style="margin-bottom: 2rem;">MARRIAGE PROPOSAL</p>
           <h1 class="stagger-text">Amalfi Proposal</h1>
           <p class="fade-in" style="font-size: 1.5rem; margin-top: 1rem; color: var(--champagne-soft);">An unforgettable evening above the Mediterranean.</p>
-          <a href="/contact.html" class="btn-organic fade-in">Inquire</a>
+          <a href="./contact.html" class="btn-organic fade-in">Inquire</a>
         </div>
       </section>
 
@@ -93,10 +106,10 @@
           </div>
           <div class="footer-col">
             <h4>Explore</h4>
-            <a href="/experiences.html">Expériences</a>
-            <a href="/destinations.html">Destinations</a>
-            <a href="/journal.html">Journal</a>
-            <a href="/vision.html">L'Histoire</a>
+            <a href="./experiences.html">Expériences</a>
+            <a href="./destinations.html">Destinations</a>
+            <a href="./journal.html">Journal</a>
+            <a href="./vision.html">L'Histoire</a>
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
@@ -112,6 +125,6 @@
       </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <script defer type="module" src="/src/main.js"></script>
   </body>
 </html>
