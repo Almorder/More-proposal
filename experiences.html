@@ -13,17 +13,24 @@
   <body>
     <!-- HEADER -->
     <header class="site-header">
-      <a href="./index.html" class="logo-left">
-        <img src="./images/logo-dark.png" alt="MORE" />
-      </a>
-      <nav class="nav-links">
-        <a href="./experiences.html">Expériences</a>
-        <a href="./destinations.html">Destinations</a>
-        <a href="./journal.html">Archives</a>
-        <a href="./vision.html">ÀÀ propos</a>
-        <a href="./contact.html" class="nav-inquire">Inquire</a>
-      </nav>
-      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
+      <div style="flex: 1;">
+        <span style="font-family: var(--font-h3-lead); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">MORE</span>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: center;">
+        <a href="./index.html">
+          <img src="./images/logo-dark.png" alt="MORE" style="height: 45px;" />
+        </a>
+      </div>
+      <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 2rem;">
+        <nav class="nav-links">
+          <a href="./experiences.html" style="border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./journal.html">Archives</a>
+          <a href="./vision.html">À propos</a>
+          <a href="./contact.html" class="nav-inquire">Inquire</a>
+        </nav>
+        <span class="mobile-menu-btn" id="mobile-menu-open" style="font-size: 1.5rem; text-transform: none;">≡</span>
+      </div>
     </header>
 
     <!-- MOBILE MENU OVERLAY -->
@@ -32,38 +39,67 @@
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Archives</a>
-      <a href="./vision.html">ÀÀ propos</a>
+      <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <main class="container" style="padding-top: 4rem;">
-      <a href="./index.html" class="backlink">← Accueil</a>
-
-      <div class="text-center" style="margin-bottom: 4rem; margin-top: 2rem;">
-        <p class="subtitle" style="margin-bottom: 1rem;">SIGNATURE SERVICES</p>
-        <h2>Une signature hybride pour marquer une vie.</h2>
-        <p style="color: var(--blue-night); max-width: 600px; margin: 1rem auto;">Nous combinons direction artistique, scénographie, voyage, émotion et contenu afin de concevoir des moments qui marquent une vie.</p>
+    <!-- MAIN EXPERIENCES CONTENT -->
+    <main style="padding-top: 4rem; padding-bottom: 6rem; background-color: var(--ivory);">
+      
+      <!-- Intro Title -->
+      <div class="container text-center" style="margin-bottom: 6rem;">
+        <p class="subtitle" style="margin-bottom: 1rem; justify-content: center;">Signature Services</p>
+        <h1 style="max-width: 900px; margin: 0 auto; line-height: 1.1;">Une signature hybride pour marquer une vie.</h1>
+        <p style="font-family: var(--font-body); color: rgba(24,24,24,0.7); max-width: 600px; margin: 2rem auto 0;">Nous combinons direction artistique, scénographie, voyage et émotion afin de concevoir des moments qui dépassent vos attentes.</p>
       </div>
 
-      <div class="grid-2" style="border-top: 1px solid var(--gray-line); padding-top: 4rem;">
-        <div class="card-img-wrap" style="height: 600px;">
-          <img src="./images/5.jpeg" alt="Founders Experience" class="img-cover" />
+      <!-- EXPERIENCE 1: The Founders Experience (Image Left, Text Right) -->
+      <section class="container" style="margin-bottom: 8rem;">
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 6vw; align-items: center;">
+          <div style="aspect-ratio: 4/5; overflow: hidden;">
+            <img src="./images/5.jpeg" alt="The Founders Experience" class="img-cover" style="transition: transform 1s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+          </div>
+          <div style="padding-right: 4vw;">
+            <p class="subtitle" style="margin-bottom: 1rem;">01. Exclusivité</p>
+            <h2 style="margin-bottom: 1.5rem;">The Founders Experience</h2>
+            <p style="font-family: var(--font-body); color: rgba(24,24,24,0.7); margin-bottom: 2.5rem; font-size: 1.05rem;">Conçue personnellement par notre fondateur. Une immersion totale où chaque détail est orchestré sans compromis. Lieux inaccessibles, chefs étoilés privés et scénographies magistrales pour un moment de pure perfection.</p>
+            <a href="./product.html" class="btn-solid-dark" style="background: transparent; color: var(--graphite); padding: 1rem 2.5rem;">DÉCOUVRIR</a>
+          </div>
         </div>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <p class="subtitle" style="margin-bottom: 1rem;">THE CORE OFFER</p>
-          <h2 style="margin-bottom: 2rem;">Founders Experience</h2>
-          <ul style="list-style: none;">
-            <li style="padding: 1rem 0; border-bottom: 1px solid var(--gray-line);">Concept sur-mesure</li>
-            <li style="padding: 1rem 0; border-bottom: 1px solid var(--gray-line);">Organisation & Scénographie</li>
-            <li style="padding: 1rem 0; border-bottom: 1px solid var(--gray-line);">Captation visuelle & Film souvenir</li>
-          </ul>
-          <a href="./product.html" class="btn-solid" style="margin-top: 3rem; align-self: flex-start;">See example: Amalfi Proposal</a>
+      </section>
+
+      <!-- EXPERIENCE 2: Luxury Celebrations (Full Width Banner Style) -->
+      <section style="background-color: var(--graphite); color: var(--ivory); padding: 8rem 4vw; margin-bottom: 8rem; position: relative;">
+        <!-- Faint background image overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.2; z-index: 0; pointer-events: none;">
+          <img src="./images/2.jpeg" alt="Background" class="img-cover" style="filter: grayscale(100%);" />
         </div>
-      </div>
+        
+        <div class="container" style="position: relative; z-index: 1; text-align: center;">
+          <p class="subtitle" style="margin-bottom: 1rem; justify-content: center; color: var(--champagne);">02. Célébrations</p>
+          <h2 style="margin-bottom: 1.5rem; font-size: clamp(3rem, 5vw, 4.5rem);">Luxury Celebrations</h2>
+          <p style="font-family: var(--font-body); opacity: 0.8; max-width: 600px; margin: 0 auto 3rem; font-size: 1.05rem;">Anniversaires, renouvellements de vœux, ou célébrations privées. Nous transformons les plus belles destinations du monde en votre domaine privé l'espace d'une nuit.</p>
+          <a href="./product.html" class="btn-outline-white" style="border-color: var(--ivory); color: var(--ivory);">DÉCOUVRIR</a>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE 3: Romantic Escapes (Text Left, Image Right) -->
+      <section class="container" style="margin-bottom: 4rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 6vw; align-items: center;">
+          <div style="padding-left: 4vw;">
+            <p class="subtitle" style="margin-bottom: 1rem;">03. Intimité</p>
+            <h2 style="margin-bottom: 1.5rem;">Romantic Proposals</h2>
+            <p style="font-family: var(--font-body); color: rgba(24,24,24,0.7); margin-bottom: 2.5rem; font-size: 1.05rem;">La demande en mariage parfaite exige un équilibre subtil entre surprise, émotion et esthétique. De la côte amalfitaine aux toits de Paris, nous dessinons l'écrin de votre "Oui".</p>
+            <a href="./product.html" class="btn-solid-dark" style="background: transparent; color: var(--graphite); padding: 1rem 2.5rem;">DÉCOUVRIR</a>
+          </div>
+          <div style="aspect-ratio: 4/5; overflow: hidden;">
+            <img src="./images/3.jpeg" alt="Romantic Proposals" class="img-cover" style="transition: transform 1s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <!-- FOOTER -->
-    
     <!-- WHATSAPP CTA -->
     <section class="cta-whatsapp-section">
       <div class="cta-w-image">
@@ -111,7 +147,7 @@
             <li><a href="./experiences.html">Expériences</a></li>
             <li><a href="./destinations.html">Destinations</a></li>
             <li><a href="./journal.html">Archives</a></li>
-            <li><a href="./vision.html">ÀÀ propos</a></li>
+            <li><a href="./vision.html">À propos</a></li>
           </ul>
         </div>
 
@@ -141,7 +177,7 @@
 
       <div class="footer-bottom">
         <p>© 2024 MORE. Moments beautiful enough to become memories.</p>
-        <p>All rights reserêved. | Mentions Légales</p>
+        <p>All rights reserved. | Mentions Légales</p>
       </div>
     </footer>
   </body>
