@@ -3,122 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | The Vision</title>
+    <title>MORE | Vision</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body class="js-loading">
-    <!-- Navbar / Header Immersif -->
-    <header class="site-header header-light">
-      <div class="header-brand">
-        <span class="brand-name">MORE</span>
-      </div>
-      <div class="logo-center">
-        <img src="/images/logo-light.png" alt="MORE Logo" />
-      </div>
-      <nav class="main-nav">
-        <a href="./vision.html">About</a>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="./index.html" class="logo-left">
+        <img src="./images/logo-dark.png" alt="MORE" />
+      </a>
+      <nav class="nav-links">
         <a href="./experiences.html">Expériences</a>
-        <a href="./memory.html">Journal</a>
+        <a href="./destinations.html">Destinations</a>
+        <a href="./journal.html">Journal</a>
+        <a href="./vision.html">À propos</a>
         <a href="./contact.html" class="nav-inquire">Inquire</a>
       </nav>
+      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
     </header>
 
-    <!-- Mobile Overlay Menu -->
+    <!-- MOBILE MENU OVERLAY -->
     <div class="overlay-menu" id="overlay-menu">
-      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Journal</a>
       <a href="./vision.html">À propos</a>
-      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+      <a href="./contact.html">Inquire</a>
     </div>
 
-
-    <main id="app">
-      <!-- Section 1: Hero About -->
-      <section class="about-hero">
-        <img src="/images/about-hero.png" alt="About MORE" class="img-cover" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1; object-position: top;" />
-        <div style="position: absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)); z-index: 0;"></div>
-        <div class="container" style="position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: center; padding-top: 10rem;">
-          <h3 class="subtitle" style="color:var(--ivory); margin-bottom:1rem; opacity:0.8; font-size:0.85rem; text-transform:uppercase;">ABOUT MORE</h3>
-          <h1 style="color:var(--ivory); font-size: 5rem; max-width:800px;">Des moments assez beaux pour devenir des souvenirs.</h1>
-          <p style="color:var(--ivory); margin-top:2rem; font-size:1.1rem; font-weight:300;">Premium Romantic Experiences</p>
+    <main>
+      <!-- SPLIT HERO -->
+      <section class="container" style="padding-top: 6rem; padding-bottom: 4rem;">
+        <div class="thin-line" style="margin-bottom: 4rem;"></div>
+        <div style="display: flex; gap: 4vw; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 300px;">
+            <p class="subtitle" style="margin-bottom: 1rem;">OUR MANIFESTO</p>
+            <h2>We create moments beautiful enough to become memories.</h2>
+          </div>
+          <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+            <p style="margin-bottom: 1rem; color: var(--blue-night);">Nous ne créons pas des décors. Nous ne créons pas des images. Nous ne créons pas du luxe.</p>
+            <p style="color: var(--blue-night);">Nous créons des moments qui arrêtent le temps. Des moments qu'on ne regarde pas seulement. Mais des moments qu'on garde.</p>
+          </div>
         </div>
       </section>
 
-      <!-- Section 2: Manifesto Text (Editorial split) -->
-      <section class="about-intro container">
-        <div class="about-intro-left">
-          <h3 class="subtitle" style="color:var(--champagne-soft); margin-bottom:2rem; font-size:0.85rem; text-transform:uppercase;">OUR MANIFESTO <span style="display:inline-block; width:40px; height:1px; background:currentColor; margin-bottom:4px; margin-left:10px;"></span></h3>
-          <h1>More than a moment.<br>A memory for life.</h1>
-        </div>
-        <div class="about-intro-right">
-          <p>Nous ne créons pas des décors.<br>Nous ne créons pas des images.<br>Nous ne créons pas du luxe.</p>
-          <p>Nous créons des moments qui arrêtent le temps. Des moments qu'on ne regarde pas seulement. Mais des moments qu'on garde.</p>
-          <p>Et si demain tout disparaît, il reste encore le souvenir.</p>
+      <!-- FOUNDER SECTION -->
+      <section class="container" style="padding: 4rem 0;">
+        <div class="thin-line" style="margin-bottom: 4rem;"></div>
+        <div class="grid-2">
+          <div style="height: 500px; background-color: #eee;">
+            <img src="./images/7.jpeg" alt="Founder" class="img-cover" />
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <p class="subtitle" style="margin-bottom: 1rem;">OUR FOUNDER</p>
+            <h3 style="margin-bottom: 2rem; font-size: 2rem;">A love for detail. A passion for meaning.</h3>
+            <p style="color: var(--blue-night);">MORE was founded by a creator and visionary with a simple belief: that the most meaningful moments in life are the ones we intentionally create.</p>
+          </div>
         </div>
       </section>
 
-      <div class="container"><div class="thin-line"></div></div>
-
-      <!-- Section 3: Our Founder -->
-      <section class="founder-section container">
-        <div class="founder-text">
-          <h3 class="subtitle" style="color:var(--champagne-soft); margin-bottom:2rem; font-size:0.85rem; text-transform:uppercase;">OUR FOUNDER <span style="display:inline-block; width:40px; height:1px; background:currentColor; margin-bottom:4px; margin-left:10px;"></span></h3>
-          <h2>A love for detail.<br>A passion for meaning.</h2>
-          <p style="margin-bottom: 2rem;">MORE was founded by a creator and visionary with a simple belief: that the most meaningful moments in life are the ones we intentionally create.</p>
-          <p style="margin-bottom: 3rem;">With a background in luxury hospitality, design and storytelling, our founder travelled the world, curating unforgettable experiences for discerning clients.</p>
-          <img src="/images/logo-dark.png" alt="Signature" style="height:40px;" />
-          <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:#888; margin-top:1rem;">FOUNDER, MORE</p>
+      <!-- PILLARS -->
+      <section class="container" style="padding: 4rem 0;">
+        <div class="thin-line" style="margin-bottom: 4rem;"></div>
+        <div class="text-center" style="margin-bottom: 4rem;">
+          <p class="subtitle" style="margin-bottom: 1rem;">OUR PILLARS</p>
+          <h2>The emotions we design around.</h2>
         </div>
-        <div class="founder-image">
-          <img src="/images/7.jpeg" alt="Founder Portrait" class="img-cover" />
-        </div>
-      </section>
-
-      <!-- Section 4: Vertical Piliers -->
-      <section style="background-color: #EBE6DF; padding: 6rem 0;">
-        <div class="container" style="display:flex; justify-content:space-between; margin-bottom:2rem; align-items:flex-end;">
-          <div style="flex:1;">
-            <h3 class="subtitle" style="color:var(--champagne-soft); margin-bottom:1rem; font-size:0.85rem; text-transform:uppercase;">OUR PILLARS <span style="display:inline-block; width:40px; height:1px; background:currentColor; margin-bottom:4px; margin-left:10px;"></span></h3>
-            <h2 style="font-size:3.5rem; line-height:1.1; max-width:300px;">The emotions we design around.</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2vw;">
+          <div style="border: 1px solid var(--gray-line); padding: 2rem;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-h1-h2); font-size: 2rem;">Trust</h3>
+            <p style="color: var(--blue-night); font-size: 0.9rem;">On simplifie. On accompagne. On rassure.</p>
           </div>
-        </div>
-        <div class="container pillars-vertical">
-          <div class="pillar-vertical-card">
-            <img src="/images/4.jpeg" class="img-cover" alt="Trust" />
-            <div class="pillar-content">
-              <h3>Trust</h3>
-              <p>On simplifie. On accompagne. On rassure.</p>
-            </div>
+          <div style="border: 1px solid var(--gray-line); padding: 2rem;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-h1-h2); font-size: 2rem;">Elevation</h3>
+            <p style="color: var(--blue-night); font-size: 0.9rem;">On dépasse le quotidien. Une rupture avec l'ordinaire.</p>
           </div>
-          <div class="pillar-vertical-card">
-            <img src="/images/1.jpeg" class="img-cover" alt="Elevation" />
-            <div class="pillar-content">
-              <h3>Elevation</h3>
-              <p>On dépasse le quotidien. Une rupture avec l'ordinaire.</p>
-            </div>
+          <div style="border: 1px solid var(--gray-line); padding: 2rem;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-h1-h2); font-size: 2rem;">Connection</h3>
+            <p style="color: var(--blue-night); font-size: 0.9rem;">L'humain au centre. Le décor ne vole jamais le moment.</p>
           </div>
-          <div class="pillar-vertical-card">
-            <img src="/images/2.jpeg" class="img-cover" alt="Connection" />
-            <div class="pillar-content">
-              <h3>Connection</h3>
-              <p>L'humain au centre. Le décor ne vole jamais le moment.</p>
-            </div>
-          </div>
-          <div class="pillar-vertical-card">
-            <img src="/images/6.jpeg" class="img-cover" alt="Memory" />
-            <div class="pillar-content">
-              <h3>Memory</h3>
-              <p>On capture. On transmet. Le moment continue après.</p>
-            </div>
+          <div style="border: 1px solid var(--gray-line); padding: 2rem;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-h1-h2); font-size: 2rem;">Memory</h3>
+            <p style="color: var(--blue-night); font-size: 0.9rem;">On capture. On transmet. Le moment continue après.</p>
           </div>
         </div>
       </section>
     </main>
-    <script defer type="module" src="/src/main.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>
+        <img src="./images/logo-dark.png" alt="MORE" style="height:30px; margin-bottom:1rem;" />
+        <p style="font-size:0.8rem; color:var(--blue-night);">Maison de création d'expériences romantiques premium.</p>
+      </div>
+      <div>
+        <p class="subtitle">Explore</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./vision.html">À propos</a>
+        </div>
+      </div>
+      <div>
+        <p class="subtitle">Contact</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="mailto:contact@more.com">contact@more.com</a>
+          <a href="https://wa.me/33667942463">WhatsApp</a>
+          <a href="./contact.html">Demander une consultation</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

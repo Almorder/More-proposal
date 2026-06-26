@@ -3,168 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | Archives & Journal</title>
+    <title>MORE | Journal & Archives</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body class="js-loading">
-    <!-- Navbar / Header Immersif -->
-    <header class="site-header header-light">
-      <div class="header-brand">
-        <span class="brand-name">MORE</span>
-      </div>
-      <div class="logo-center">
-        <img src="/images/logo-light.png" alt="MORE Logo" />
-      </div>
-      <nav class="main-nav">
-        <a href="./vision.html">About</a>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="./index.html" class="logo-left">
+        <img src="./images/logo-dark.png" alt="MORE" />
+      </a>
+      <nav class="nav-links">
         <a href="./experiences.html">Expériences</a>
-        <a href="./memory.html">Journal</a>
+        <a href="./destinations.html">Destinations</a>
+        <a href="./journal.html">Journal</a>
+        <a href="./vision.html">À propos</a>
         <a href="./contact.html" class="nav-inquire">Inquire</a>
       </nav>
+      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
     </header>
 
-    <!-- Mobile Overlay Menu -->
+    <!-- MOBILE MENU OVERLAY -->
     <div class="overlay-menu" id="overlay-menu">
-      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Journal</a>
       <a href="./vision.html">À propos</a>
-      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+      <a href="./contact.html">Inquire</a>
     </div>
 
+    <main class="container" style="padding-top: 4rem;">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <h1 style="margin-bottom: 1rem;">Archives</h1>
+        <p style="color: var(--blue-night);">Des moments vécus. Des souvenirs laissés.</p>
+      </div>
 
-    <main id="app">
-      <!-- Section 1: Hero Archives -->
-      <section class="archives-hero">
-        <img src="/images/archives-hero.png" alt="Hero Background" class="img-cover" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1;" />
-        <div style="position: absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.3); z-index: 0;"></div>
-        <div class="container">
-          <h1>Archives</h1>
-          <p style="text-align:center;">Des moments vécus. Des souvenirs laissés.</p>
+      <!-- MASONRY GRID -->
+      <div class="masonry-clean">
+        <div class="masonry-item">
+          <img src="./images/1.jpeg" class="img-cover" alt="Archive 1" />
         </div>
-      </section>
-
-      <!-- Section 2: Interactive Filters -->
-      <nav class="archives-filters">
-        <a href="#" class="active">IMAGES</a>
-        <a href="#">FILMS</a>
-        <a href="#">PARTAGES</a>
-        <a href="#">MOTS</a>
-      </nav>
-
-      <!-- Section 3: Complex Masonry Layout -->
-      <section class="complex-grid container">
-        <div class="grid-item grid-item-large">
-          <img src="/images/1.jpeg" class="img-cover" alt="Large Dinner Scene" />
+        <div class="masonry-item">
+          <img src="./images/2.jpeg" class="img-cover" alt="Archive 2" />
         </div>
-        <div class="grid-item grid-item-tall">
-          <img src="/images/4.jpeg" class="img-cover" alt="Vertical Couple" />
-          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:50px; height:50px; border-radius:50%; border:1px solid white; display:flex; align-items:center; justify-content:center; color:white;">▶</div>
+        <div class="masonry-item">
+          <img src="./images/3.jpeg" class="img-cover" alt="Archive 3" />
         </div>
-        <div class="grid-item">
-          <img src="/images/6.jpeg" class="img-cover" alt="Details" />
+        <div class="masonry-item">
+          <img src="./images/4.jpeg" class="img-cover" alt="Archive 4" />
         </div>
-        <div class="grid-item">
-          <img src="/images/7.jpeg" class="img-cover" alt="View" />
+        <div class="masonry-item">
+          <img src="./images/5.jpeg" class="img-cover" alt="Archive 5" />
         </div>
-      </section>
-
-      <!-- Section 4: "Vu par eux" (Instagram-like Module) -->
-      <section class="module-section container">
-        <div class="module-header">
-          <h2>Vu par eux</h2>
-          <span class="subtitle">VOIR PLUS ⟶</span>
+        <div class="masonry-item">
+          <img src="./images/6.jpeg" class="img-cover" alt="Archive 6" />
         </div>
-        <div class="social-grid">
-          <div class="social-card">
-            <div class="social-card-header">
-              <div class="social-avatar"></div>
-              <span class="social-username">sarah_dmvr</span>
-              <span class="social-time">1h</span>
-            </div>
-            <div class="social-image" style="background: url('/images/3.jpeg') center/cover;"></div>
-            <div class="social-footer">
-              <h4>Amalfi Coast</h4>
-              <p>Marriage Proposal</p>
-            </div>
-          </div>
-          <div class="social-card">
-            <div class="social-card-header">
-              <div class="social-avatar"></div>
-              <span class="social-username">mathis_lbr</span>
-              <span class="social-time">2h</span>
-            </div>
-            <div class="social-image" style="background: url('/images/5.jpeg') center/cover;"></div>
-            <div class="social-footer">
-              <h4>Lake Como</h4>
-              <p>Anniversary Experience</p>
-            </div>
-          </div>
-          <div class="social-card">
-            <div class="social-card-header">
-              <div class="social-avatar"></div>
-              <span class="social-username">emma.fit</span>
-              <span class="social-time">2h</span>
-            </div>
-            <div class="social-image" style="background: url('/images/6.jpeg') center/cover;"></div>
-            <div class="social-footer">
-              <h4>Santorini</h4>
-              <p>Romantic Escape</p>
-            </div>
-          </div>
-          <div class="social-card">
-            <div class="social-card-header">
-              <div class="social-avatar"></div>
-              <span class="social-username">leo_brs</span>
-              <span class="social-time">4h</span>
-            </div>
-            <div class="social-image" style="background: url('/images/2.jpeg') center/cover;"></div>
-            <div class="social-footer">
-              <h4>Provence</h4>
-              <p>Luxury Celebration</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 5: "Leurs mots" (Testimonials Module) -->
-      <section class="module-section container">
-        <div class="module-header">
-          <h2>Leurs mots</h2>
-          <span class="subtitle">VOIR PLUS ⟶</span>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="test-initials">C & J</div>
-            <div class="test-meta">Amalfi Coast<br>Marriage Proposal<br>12.05.2024</div>
-            <div class="test-text">"Je pensais lui offrir une demande. MORE a créé un souvenir que nous garderons toute notre vie."</div>
-            <div class="test-verified">Avis vérifié</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="test-initials">M & A</div>
-            <div class="test-meta">Lake Como<br>Anniversary Experience<br>21.06.2024</div>
-            <div class="test-text">"Tout était parfait, discret, élégant, émotionnel. Nous n'aurions pas pu rêver mieux."</div>
-            <div class="test-verified">Avis vérifié</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="test-initials">L & P</div>
-            <div class="test-meta">Paris<br>Luxury Celebration<br>03.07.2024</div>
-            <div class="test-text">"Une soirée magique, pensée dans les moindres détails. Inoubliable."</div>
-            <div class="test-verified">Avis vérifié</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="test-initials">S & N</div>
-            <div class="test-meta">Santorini<br>Romantic Escape<br>18.07.2024</div>
-            <div class="test-text">"Un moment suspendu, juste nous et la beauté de l'instant."</div>
-            <div class="test-verified">Avis vérifié</div>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
-    <script defer type="module" src="/src/main.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>
+        <img src="./images/logo-dark.png" alt="MORE" style="height:30px; margin-bottom:1rem;" />
+        <p style="font-size:0.8rem; color:var(--blue-night);">Maison de création d'expériences romantiques premium.</p>
+      </div>
+      <div>
+        <p class="subtitle">Explore</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./vision.html">À propos</a>
+        </div>
+      </div>
+      <div>
+        <p class="subtitle">Contact</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="mailto:contact@more.com">contact@more.com</a>
+          <a href="https://wa.me/33667942463">WhatsApp</a>
+          <a href="./contact.html">Demander une consultation</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -3,145 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | Création d'expériences romantiques</title>
-    <!-- Fonts -->
+    <title>MORE | Accueil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- CSS -->
     <link rel="stylesheet" href="./src/style.css" />
-    <!-- Scripts (defer to prevent blocking) -->
-    <script defer src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body class="dark-theme js-loading">
-    <!-- Mega Navbar Immersive -->
+  <body>
+    <!-- HEADER -->
     <header class="site-header">
-      <div class="header-container">
-        <nav class="nav-left">
-          <a href="./experiences.html">Expériences</a>
-          <a href="./destinations.html">Destinations</a>
-          <a href="./journal.html">Journal</a>
-          <a href="./vision.html">À propos</a>
-        </nav>
-        <a href="./index.html" class="logo-center">
-          <img src="./images/logo-light.png" alt="MORE" />
-        </a>
-        <div class="nav-right">
-          <a href="./contact.html" class="nav-inquire">Inquire</a>
-        </div>
-        <!-- Mobile Menu Trigger -->
-        <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
-      </div>
+      <a href="./index.html" class="logo-left">
+        <img src="./images/logo-dark.png" alt="MORE" />
+      </a>
+      <nav class="nav-links">
+        <a href="./experiences.html">Expériences</a>
+        <a href="./destinations.html">Destinations</a>
+        <a href="./journal.html">Journal</a>
+        <a href="./vision.html">À propos</a>
+        <a href="./contact.html" class="nav-inquire">Inquire</a>
+      </nav>
+      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
     </header>
 
-    <!-- Mobile Overlay Menu -->
+    <!-- MOBILE MENU OVERLAY -->
     <div class="overlay-menu" id="overlay-menu">
-      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Journal</a>
       <a href="./vision.html">À propos</a>
-      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+      <a href="./contact.html">Inquire</a>
     </div>
 
-    <!-- WhatsApp CTA Float -->
-    <a href="https://wa.me/33667942463" target="_blank" class="whatsapp-cta">
-      <span>Contactez-nous</span>
-    </a>
-
-    <main id="app">
-      <!-- Section 1: Hero Immersif Organique -->
-      <section class="hero-organic">
-        <div class="hero-image-wrapper" data-speed="0.8">
-          <img src="./images/1.jpeg" alt="Hero Background" class="img-cover hero-img" />
-          <div class="overlay-dark"></div>
+    <main>
+      <!-- HERO -->
+      <section class="container hero-standard">
+        <div class="hero-standard-text">
+          <p class="subtitle" style="margin-bottom: 1rem;">MORE Experiences</p>
+          <h1 style="margin-bottom: 2rem; max-width: 500px;">Stories worth remembering.</h1>
+          <p style="margin-bottom: 3rem; max-width: 400px; color: var(--blue-night);">Nous créons des moments romantiques haut de gamme conçus pour s'inscrire dans l'éternité.</p>
+          <a href="./experiences.html" class="btn-solid">Discover our experiences</a>
         </div>
-        <div class="hero-content">
-          <h1 class="stagger-text">Des moments<br>assez beaux<br>pour devenir<br>des souvenirs.</h1>
-          <a href="./contact.html" class="btn-organic fade-in">Begin your story</a>
+        <div class="hero-standard-img">
+          <img src="./images/1.jpeg" alt="Hero" class="img-cover" />
         </div>
       </section>
 
-      <!-- Section 2: Secondary Flow -->
-      <nav class="secondary-flow">
-        <div class="flow-item fade-in">Dream</div>
-        <div class="flow-item fade-in">Plan</div>
-        <div class="flow-item fade-in">Experience</div>
-        <div class="flow-item fade-in">Remember</div>
-      </nav>
-
-      <!-- Section 3: Asymmetrical Discovery Grids -->
-      <section class="discovery-section">
-        <div class="container">
-          <div class="organic-grid">
-            <div class="organic-card mt-xl reveal-img">
-              <p class="overline">STORIES <span class="line-h"></span></p>
-              <div class="img-wrapper portrait">
-                <img src="./images/2.jpeg" class="img-cover" />
-              </div>
-              <h2>The beginning<br>of forever</h2>
-              <a href="./product.html" class="link-arrow">Read story ⟶</a>
+      <!-- CATEGORIES GRID -->
+      <section class="container" style="padding-top: 4rem;">
+        <div class="thin-line"></div>
+        <div class="grid-3">
+          <div class="card-clean">
+            <p class="subtitle">STORIES</p>
+            <h3>The beginning<br>of forever</h3>
+            <div class="card-img-wrap" style="margin: 1rem 0;">
+              <img src="./images/2.jpeg" class="img-cover" alt="Proposals" />
             </div>
-
-            <div class="organic-card mt-sm reveal-img">
-              <p class="overline">DESTINATIONS <span class="line-h"></span></p>
-              <div class="img-wrapper landscape">
-                <img src="./images/4.jpeg" class="img-cover" />
-              </div>
-              <h2>Lake Como<br>Timeless by nature</h2>
-              <a href="./destinations.html" class="link-arrow">Discover ⟶</a>
+            <a href="./product.html" class="subtitle" style="color: var(--graphite);">Read story →</a>
+          </div>
+          <div class="card-clean">
+            <p class="subtitle">DESTINATIONS</p>
+            <h3>Lake Como<br>Timeless by nature</h3>
+            <div class="card-img-wrap" style="margin: 1rem 0;">
+              <img src="./images/4.jpeg" class="img-cover" alt="Lake Como" />
             </div>
-
-            <div class="organic-card mt-lg reveal-img">
-              <p class="overline">MOMENTS <span class="line-h"></span></p>
-              <div class="img-wrapper square">
-                <img src="./images/6.jpeg" class="img-cover" />
-              </div>
-              <h2>Details that<br>stay with you</h2>
-              <a href="./journal.html" class="link-arrow">View moments ⟶</a>
+            <a href="./destinations.html" class="subtitle" style="color: var(--graphite);">Discover →</a>
+          </div>
+          <div class="card-clean">
+            <p class="subtitle">MOMENTS</p>
+            <h3>Details that<br>stay with you</h3>
+            <div class="card-img-wrap" style="margin: 1rem 0;">
+              <img src="./images/6.jpeg" class="img-cover" alt="Details" />
             </div>
+            <a href="./journal.html" class="subtitle" style="color: var(--graphite);">View moments →</a>
           </div>
         </div>
       </section>
-      
-      <!-- Section 4: Philosophy Quote -->
-      <section class="philosophy-section">
-        <div class="container text-center">
-          <h2 class="huge-text fade-in">We travel not to escape life, but for life not to escape us.</h2>
-          <p class="author fade-in">— Anonymous</p>
-        </div>
-      </section>
-
     </main>
 
-    <!-- Mega Footer Composition -->
-    <footer class="mega-footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-col">
-            <img src="./images/logo-light.png" class="footer-logo" />
-            <p>Maison de création d'expériences<br>romantiques premium.</p>
-          </div>
-          <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="./experiences.html">Expériences</a>
-            <a href="./destinations.html">Destinations</a>
-            <a href="./journal.html">Journal</a>
-            <a href="./vision.html">L'Histoire</a>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="mailto:contact@more.com">contact@more.com</a>
-            <a href="#">@more.experiences</a>
-            <a href="https://wa.me/33667942463">WhatsApp</a>
-          </div>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>
+        <img src="./images/logo-dark.png" alt="MORE" style="height:30px; margin-bottom:1rem;" />
+        <p style="font-size:0.8rem; color:var(--blue-night);">Maison de création d'expériences romantiques premium.</p>
+      </div>
+      <div>
+        <p class="subtitle">Explore</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./vision.html">À propos</a>
         </div>
-        <div class="footer-bottom">
-          <span>© 2026 MORE Experiences. All rights reserved.</span>
-          <span>Designed with intentionality.</span>
+      </div>
+      <div>
+        <p class="subtitle">Contact</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="mailto:contact@more.com">contact@more.com</a>
+          <a href="https://wa.me/33667942463">WhatsApp</a>
+          <a href="./contact.html">Demander une consultation</a>
         </div>
       </div>
     </footer>

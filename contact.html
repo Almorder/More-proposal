@@ -4,96 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MORE | Contact</title>
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- CSS -->
     <link rel="stylesheet" href="./src/style.css" />
-    <!-- Scripts (defer to prevent blocking) -->
-    <script defer src="https://unpkg.com/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script defer type="module" src="./src/main.js"></script>
-    <style>
-      body { background-color: var(--graphite); color: var(--ivory); }
-    </style>
   </head>
-  <body class="dark-theme js-loading">
-    <!-- Mega Navbar Immersive -->
+  <body>
+    <!-- HEADER -->
     <header class="site-header">
-      <div class="header-container">
-        <nav class="nav-left">
-          <a href="./experiences.html">Expériences</a>
-          <a href="./destinations.html">Destinations</a>
-          <a href="./journal.html">Journal</a>
-          <a href="./vision.html">À propos</a>
-        </nav>
-        <a href="./index.html" class="logo-center">
-          <img src="./images/logo-light.png" alt="MORE" />
-        </a>
-        <div class="nav-right">
-          <a href="./contact.html" class="nav-inquire">Inquire</a>
-        </div>
-        <!-- Mobile Menu Trigger -->
-        <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
-      </div>
+      <a href="./index.html" class="logo-left">
+        <img src="./images/logo-dark.png" alt="MORE" />
+      </a>
+      <nav class="nav-links">
+        <a href="./experiences.html">Expériences</a>
+        <a href="./destinations.html">Destinations</a>
+        <a href="./journal.html">Journal</a>
+        <a href="./vision.html">À propos</a>
+        <a href="./contact.html" class="nav-inquire">Inquire</a>
+      </nav>
+      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
     </header>
 
-    <!-- Mobile Overlay Menu -->
+    <!-- MOBILE MENU OVERLAY -->
     <div class="overlay-menu" id="overlay-menu">
-      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:3rem; right:4vw;">Close</div>
+      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Journal</a>
       <a href="./vision.html">À propos</a>
-      <a href="./contact.html" class="nav-inquire" style="margin-top:2rem;">Inquire</a>
+      <a href="./contact.html">Inquire</a>
     </div>
 
-    <!-- WhatsApp CTA Float -->
-    <a href="https://wa.me/33667942463" target="_blank" class="whatsapp-cta">
-      <span>Contactez-nous</span>
-    </a>
+    <main class="container" style="padding-top: 4rem; padding-bottom: 6rem;">
+      <a href="./index.html" class="backlink">← Accueil</a>
 
-    <main id="app" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10rem 4vw 6rem;">
-      <section style="margin-bottom: 4rem;">
-        <h1 class="stagger-text" style="font-size: clamp(3rem, 6vw, 4rem); margin-bottom:1rem;">Commencer le récit.</h1>
-        <h3 class="subtitle fade-in" style="color: var(--champagne-soft); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.2em;">À ceux qui osent. L'Homme Moderne.</h3>
-      </section>
+      <div class="text-center" style="margin-bottom: 4rem; margin-top: 2rem;">
+        <p class="subtitle" style="margin-bottom: 1rem;">INQUIRE</p>
+        <h2>Commencer le récit.</h2>
+      </div>
 
-      <!-- FORMSPREE INTEGRATION (Replace action URL with your formspree ID) -->
-      <form class="fade-in" style="width: 100%; max-width: 600px;" action="https://formspree.io/f/VOTRE_CODE_FORMSPREE" method="POST">
-        <div style="margin-bottom: 2.5rem; position: relative;">
-          <input type="text" id="votre-nom" name="votre-nom" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(242, 237, 228, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0; outline: none;" placeholder=" " />
-          <label for="votre-nom" style="position: absolute; left: 0; top: 0.5rem; color: rgba(242, 237, 228, 0.5); pointer-events: none; transition: 0.3s ease;">Votre Nom</label>
-        </div>
-        
-        <div style="margin-bottom: 2.5rem; position: relative;">
-          <input type="email" id="email" name="email" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(242, 237, 228, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0; outline: none;" placeholder=" " />
-          <label for="email" style="position: absolute; left: 0; top: 0.5rem; color: rgba(242, 237, 228, 0.5); pointer-events: none; transition: 0.3s ease;">Votre Email</label>
-        </div>
+      <div class="form-clean">
+        <form action="https://formspree.io/f/VOTRE_CODE_FORMSPREE" method="POST">
+          <div class="form-group">
+            <label for="votre-nom">Votre Nom</label>
+            <input type="text" id="votre-nom" name="votre-nom" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Votre Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-        <div style="margin-bottom: 2.5rem; position: relative;">
-          <input type="text" id="periode" name="periode" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(242, 237, 228, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0; outline: none;" placeholder=" " />
-          <label for="periode" style="position: absolute; left: 0; top: 0.5rem; color: rgba(242, 237, 228, 0.5); pointer-events: none; transition: 0.3s ease;">Période envisagée</label>
-        </div>
+          <div class="form-group">
+            <label for="periode">Période envisagée</label>
+            <input type="text" id="periode" name="periode" required />
+          </div>
 
-        <div style="margin-bottom: 2.5rem; position: relative;">
-          <textarea id="description" name="description" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(242, 237, 228, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0; min-height: 80px; resize:vertical; outline: none;" placeholder=" "></textarea>
-          <label for="description" style="position: absolute; left: 0; top: 0.5rem; color: rgba(242, 237, 228, 0.5); pointer-events: none; transition: 0.3s ease;">Décrivez-nous le souvenir que vous souhaitez créer.</label>
-        </div>
+          <div class="form-group">
+            <label for="description">Décrivez-nous le souvenir que vous souhaitez créer.</label>
+            <textarea id="description" name="description" required rows="4"></textarea>
+          </div>
 
-        <!-- Floating Label CSS specific to form -->
-        <style>
-          input:focus + label, input:not(:placeholder-shown) + label,
-          textarea:focus + label, textarea:not(:placeholder-shown) + label {
-            top: -1.5rem; font-size: 0.8rem; color: var(--champagne-soft);
-          }
-        </style>
-
-        <button type="submit" class="btn-organic" style="margin-top: 2rem; background:transparent; color:var(--ivory); cursor:pointer;">Envoyer la demande</button>
-      </form>
+          <button type="submit" class="btn-solid" style="width: 100%; margin-top: 1rem;">Envoyer la demande</button>
+        </form>
+      </div>
     </main>
 
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>
+        <img src="./images/logo-dark.png" alt="MORE" style="height:30px; margin-bottom:1rem;" />
+        <p style="font-size:0.8rem; color:var(--blue-night);">Maison de création d'expériences romantiques premium.</p>
+      </div>
+      <div>
+        <p class="subtitle">Explore</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./vision.html">À propos</a>
+        </div>
+      </div>
+      <div>
+        <p class="subtitle">Contact</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
+          <a href="mailto:contact@more.com">contact@more.com</a>
+          <a href="https://wa.me/33667942463">WhatsApp</a>
+          <a href="./contact.html">Demander une consultation</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
