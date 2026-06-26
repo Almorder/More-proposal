@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -9,86 +9,306 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
     <script defer type="module" src="./src/main.js"></script>
+    <style>
+      /* CUSTOM MAP STYLES */
+      .map-section {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        background-color: #E8E3DB; /* Slightly darker ivory for map feel */
+        overflow: hidden;
+      }
+      /* Optional: A faint map texture overlay */
+      .map-texture {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        opacity: 0.1;
+        background-image: radial-gradient(var(--graphite) 1px, transparent 1px);
+        background-size: 20px 20px;
+        pointer-events: none;
+      }
+      .map-pin {
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s;
+      }
+      .map-pin:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+        z-index: 10;
+      }
+      .pin-dot {
+        width: 12px; height: 12px;
+        background-color: var(--graphite);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(24,24,24,0.1);
+      }
+      .pin-label {
+        font-family: var(--font-h3-lead);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--graphite);
+        background: rgba(245, 240, 232, 0.8);
+        padding: 4px 8px;
+        border-radius: 4px;
+        backdrop-filter: blur(4px);
+      }
+      .map-card {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 320px;
+        background: var(--ivory);
+        border: 1px solid var(--gray-line);
+        padding: 1rem;
+        display: none; /* Hidden by default, toggled by JS */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        z-index: 20;
+      }
+      .map-card.active {
+        display: block;
+        animation: fadeUp 0.4s ease;
+      }
+      .map-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      /* Approximate map positioning */
+      #pin-paris { top: 40%; left: 45%; }
+      #pin-amalfi { top: 55%; left: 52%; }
+      #pin-como { top: 45%; left: 50%; }
+      #pin-santorini { top: 65%; left: 60%; }
+      #pin-marrakech { top: 75%; left: 42%; }
+      #pin-provence { top: 48%; left: 46%; }
+    </style>
   </head>
   <body>
-    <!-- STANDARD HEADER (SOLID BACKGROUND) -->
+    <!-- STANDARD HEADER (Dark text on ivory) -->
     <header class="site-header">
-      <div class="home-header-left" style="flex:1; font-family: var(--font-h3-lead); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">
-        <span>MORE</span>
+      <div style="flex: 1;">
+        <span style="font-family: var(--font-h3-lead); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">MORE</span>
       </div>
-      <div class="home-header-center" style="flex:1; display:flex; justify-content:center;">
+      <div style="flex: 1; display: flex; justify-content: center;">
         <a href="./index.html">
           <img src="./images/logo-dark.png" alt="MORE" style="height: 45px;" />
         </a>
       </div>
-      <div class="home-header-right" style="flex:1; display:flex; justify-content:flex-end; align-items:center; gap:2rem;">
-        <nav class="transparent-nav">
-          <a href="./experiences.html" style="color:var(--graphite);">ExpÃ©riences</a>
-          <a href="./destinations.html" style="color:var(--graphite); opacity:1;">Destinations</a>
-          <a href="./journal.html" style="color:var(--graphite);">Archives</a>
-          <a href="./vision.html" style="color:var(--graphite);">About</a>
-          <a href="./contact.html" class="transparent-inquire" style="border-color:var(--graphite); color:var(--graphite);">Inquire</a>
+      <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 2rem;">
+        <nav class="nav-links">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html" style="border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Destinations</a>
+          <a href="./journal.html">Archives</a>
+          <a href="./vision.html">À propos</a>
+          <a href="./contact.html" class="nav-inquire">Inquire</a>
         </nav>
-        <span class="home-hamburger" id="mobile-menu-open" style="color:var(--graphite);">â‰¡</span>
+        <span class="mobile-menu-btn" id="mobile-menu-open" style="font-size: 1.5rem; text-transform: none; display: block;">≡</span>
       </div>
     </header>
 
-    <!-- OVERLAY MENU (Mobile) -->
+    <!-- MOBILE MENU OVERLAY -->
     <div class="overlay-menu" id="overlay-menu">
       <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
-      <a href="./experiences.html">ExpÃ©riences</a>
+      <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Archives</a>
-      <a href="./vision.html">Ã€Ã€ propos</a>
+      <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <!-- MOSAIC GRID (Full width, no margins) -->
-    <main class="mosaic-wrapper">
+    <!-- MAP HEADER -->
+    <div class="container text-center" style="padding: 3rem 0;">
+      <p class="subtitle" style="margin-bottom: 1rem; justify-content: center;">Notre Terrain de Jeu</p>
+      <h1 style="font-size: clamp(3rem, 4vw, 4rem);">Explorez nos destinations</h1>
+      <p style="font-family: var(--font-body); color: rgba(24,24,24,0.7); max-width: 600px; margin: 1rem auto 0;">Sélectionnez un point d'intérêt pour découvrir les expériences exclusives que nous y proposons.</p>
+    </div>
+
+    <!-- INTERACTIVE MAP SECTION -->
+    <section class="map-section" id="interactive-map">
+      <div class="map-texture"></div>
       
-      <!-- Row 1 -->
-      <div class="mosaic-row">
-        <!-- Amalfi Coast (Large) -->
-        <a href="./product.html" class="mosaic-item span-large">
-          <img src="./images/3.jpeg" alt="Amalfi Coast" />
-          <h2>Amalfi Coast</h2>
-        </a>
+      <!-- PINS -->
+      <div class="map-pin" id="pin-paris" onclick="showMapCard('paris')">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Paris</div>
+      </div>
+      <div class="map-pin" id="pin-amalfi" onclick="showMapCard('amalfi')">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Amalfi Coast</div>
+      </div>
+      <div class="map-pin" id="pin-como" onclick="showMapCard('como')">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Lake Como</div>
+      </div>
+      <div class="map-pin" id="pin-santorini" onclick="showMapCard('santorini')">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Santorini</div>
+      </div>
+      <div class="map-pin" id="pin-marrakech" onclick="showMapCard('marrakech')">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Marrakech</div>
+      </div>
+      <div class="map-pin" id="pin-provence" onclick="showMapCard('provence')">
+        <div class="pin-dot"></div>
+        <div class="pin-label">Provence</div>
+      </div>
+
+      <!-- INTERACTIVE CARDS -->
+      <div class="map-card" id="card-paris">
+        <img src="./images/1.jpeg" alt="Paris" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Paris</h3>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Toits privés, croisières sur la Seine et dîners étoilés.</p>
+        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+      </div>
+      
+      <div class="map-card" id="card-amalfi">
+        <img src="./images/2.jpeg" alt="Amalfi" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Amalfi Coast</h3>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">La Dolce Vita absolue. Jardins suspendus et vues sur la mer Tyrrhénienne.</p>
+        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+      </div>
+
+      <div class="map-card" id="card-como">
+        <img src="./images/3.jpeg" alt="Lake Como" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Lake Como</h3>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Élégance intemporelle. Villas historiques et balades en bateau Riva.</p>
+        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+      </div>
+
+      <div class="map-card" id="card-santorini">
+        <img src="./images/4.jpeg" alt="Santorini" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Santorini</h3>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Couchers de soleil mythiques, dômes bleus et architecture spectaculaire.</p>
+        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+      </div>
+
+      <div class="map-card" id="card-marrakech">
+        <img src="./images/5.jpeg" alt="Marrakech" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Marrakech</h3>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Oasis privées, désert étoilé et atmosphère envoûtante.</p>
+        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+      </div>
+
+      <div class="map-card" id="card-provence">
+        <img src="./images/6.jpeg" alt="Provence" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Provence</h3>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Champs de lavande, bastides authentiques et douceur de vivre.</p>
+        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+      </div>
+    </section>
+
+    <!-- SCRIPT FOR MAP INTERACTIVITY -->
+    <script>
+      function showMapCard(destinationId) {
+        // Hide all cards
+        document.querySelectorAll('.map-card').forEach(card => card.classList.remove('active'));
+        // Reset all pins to default
+        document.querySelectorAll('.map-pin .pin-dot').forEach(dot => {
+          dot.style.backgroundColor = 'var(--graphite)';
+          dot.style.transform = 'scale(1)';
+        });
         
-        <!-- Lake Como (Med) -->
-        <a href="./product.html" class="mosaic-item span-med">
-          <img src="./images/4.jpeg" alt="Lake Como" />
-          <h2>Lake Como</h2>
-        </a>
+        // Show specific card
+        const card = document.getElementById('card-' + destinationId);
+        if (card) {
+          card.classList.add('active');
+        }
+        // Highlight specific pin
+        const pin = document.getElementById('pin-' + destinationId);
+        if (pin) {
+          const dot = pin.querySelector('.pin-dot');
+          dot.style.backgroundColor = 'var(--champagne)';
+          dot.style.transform = 'scale(1.5)';
+        }
+      }
+      
+      // Auto-open the first card (Amalfi)
+      document.addEventListener('DOMContentLoaded', () => {
+        showMapCard('amalfi');
+      });
+    </script>
 
-        <!-- Paris (Tall/Med) -->
-        <a href="./product.html" class="mosaic-item span-tall">
-          <img src="./images/6.jpeg" alt="Paris" />
-          <h2>Paris</h2>
-        </a>
+    <!-- WHATSAPP CTA -->
+    <section class="cta-whatsapp-section">
+      <div class="cta-w-image">
+        <img src="./images/2.jpeg" alt="MORE Experience" class="img-cover" />
       </div>
-
-      <!-- Row 2 -->
-      <div class="mosaic-row">
-        <!-- Santorini (Med) -->
-        <a href="./product.html" class="mosaic-item span-med">
-          <img src="./images/5.jpeg" alt="Santorini" />
-          <h2>Santorini</h2>
+      <div class="cta-w-content">
+        <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); font-family: var(--font-h1-h2); line-height: 1.1; margin-bottom: 1rem;">Un message<br>peut suffire.</h2>
+        <p style="color: var(--champagne-soft); font-family: var(--font-h3-lead); font-size: 0.9rem; margin-bottom: 2rem;">Parlez-nous du moment que vous voulez créer.</p>
+        <a href="https://wa.me/33667942463" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right: 10px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Écrire sur WhatsApp
         </a>
-
-        <!-- Provence (Med) -->
-        <a href="./product.html" class="mosaic-item span-med">
-          <img src="./images/7.jpeg" alt="Provence" />
-          <h2>Provence</h2>
-        </a>
-
-        <!-- Marrakech (Large) -->
-        <a href="./product.html" class="mosaic-item span-large">
-          <img src="./images/8.jpeg" alt="Marrakech" />
-          <h2>Marrakech</h2>
-        </a>
+        <p style="font-family: var(--font-body); font-size: 0.65rem; color: rgba(24,24,24,0.5); margin-top: 1rem;">Réponse privée. Échange humain. Sans engagement.</p>
       </div>
+    </section>
 
-    </main>
-
+    <!-- MEGA FOOTER -->
+    <footer class="site-footer-mega">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <img src="./images/logo-dark.png" alt="MORE" class="footer-logo" />
+          <div class="footer-socials">
+            <a href="https://facebook.com/more" target="_blank">Fb</a>
+            <a href="https://instagram.com/more" target="_blank">Ig</a>
+            <a href="https://tiktok.com/@more" target="_blank">Tt</a>
+          </div>
+        </div>
+        <!-- Col 2: Newsletter -->
+        <div class="footer-newsletter">
+          <h4>Curate your memories.</h4>
+          <p>Inscrivez-vous pour recevoir des inspirations d'expériences romantiques exclusives.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Votre email" />
+            <button>Rejoindre</button>
+          </div>
+        </div>
+        <!-- Col 3: Explore -->
+        <div class="footer-links">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="./experiences.html">Expériences</a></li>
+            <li><a href="./destinations.html">Destinations</a></li>
+            <li><a href="./journal.html">Archives</a></li>
+            <li><a href="./vision.html">À propos</a></li>
+          </ul>
+        </div>
+        <!-- Col 4: Support -->
+        <div class="footer-links">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="./contact.html">Consultation</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./contact.html">FAQ</a></li>
+            <li><a href="./contact.html">Légal</a></li>
+          </ul>
+        </div>
+        <!-- Col 5: Social -->
+        <div class="footer-links">
+          <h5>Social</h5>
+          <ul>
+            <li><a href="https://instagram.com/more" target="_blank">Instagram</a></li>
+            <li><a href="https://tiktok.com/@more" target="_blank">TikTok</a></li>
+            <li><a href="https://pinterest.com/more" target="_blank">Pinterest</a></li>
+            <li><a href="https://wa.me/33667942463">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 MORE. Moments beautiful enough to become memories.</p>
+        <p>All rights reserved. | Mentions Légales</p>
+      </div>
+    </footer>
   </body>
 </html>
