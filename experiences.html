@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MORE | Expériences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Navbar / Header Immersif (Dark text for light background if needed, but we'll use a hero image) -->
+    <header class="site-header header-light">
+      <div class="header-brand">
+        <span class="brand-name">MORE</span>
+      </div>
+      <div class="logo-center">
+        <img src="/images/logo-light.png" alt="MORE Logo" />
+      </div>
+      <nav class="main-nav">
+        <a href="/vision.html">About</a>
+        <a href="/experiences.html">Expériences</a>
+        <a href="/memory.html">Journal</a>
+        <a href="/contact.html" class="nav-inquire">Inquire</a>
+      </nav>
+    </header>
+
+    <main id="app">
+      <!-- Section 1: Hero Experiences -->
+      <section class="about-hero">
+        <img src="/images/3.jpeg" alt="Experiences MORE" class="img-cover" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1;" />
+        <div style="position: absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7)); z-index: 0;"></div>
+        <div class="container" style="position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: center; padding-top: 10rem;">
+          <h1 style="color:var(--ivory); font-size: 5rem; max-width:800px;">Une signature hybride pour marquer une vie.</h1>
+          <p style="color:var(--ivory); margin-top:2rem; font-size:1.1rem; max-width:600px; opacity:0.9;">Nous combinons direction artistique, scénographie, voyage, émotion et contenu afin de concevoir des moments qui marquent une vie.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: The Core Offer -->
+      <section class="founder-section container" style="margin-top:4rem;">
+        <div class="founder-image" style="background: url('/images/5.jpeg') center/cover;">
+        </div>
+        <div class="founder-text" style="padding-top:2rem;">
+          <h3 class="subtitle" style="color:var(--champagne-soft); margin-bottom:2rem; font-size:0.85rem; text-transform:uppercase;">THE CORE OFFER <span style="display:inline-block; width:40px; height:1px; background:currentColor; margin-bottom:4px; margin-left:10px;"></span></h3>
+          <h2>Founders Experience</h2>
+          <div class="thin-line" style="margin:2rem 0;"></div>
+          <ul style="list-style:none;">
+            <li style="padding:1rem 0; font-size:1.1rem; border-bottom:1px solid var(--gray-line-light);">Concept sur-mesure</li>
+            <li style="padding:1rem 0; font-size:1.1rem; border-bottom:1px solid var(--gray-line-light);">Organisation & Scénographie</li>
+            <li style="padding:1rem 0; font-size:1.1rem; border-bottom:1px solid var(--gray-line-light);">Captation visuelle & Film souvenir</li>
+          </ul>
+          <a href="/contact.html" class="btn-story" style="margin-top:3rem; color:var(--graphite); border-color:var(--graphite);">PLANIFIER UNE CONSULTATION</a>
+        </div>
+      </section>
+
+      <!-- Section 3: FAQ -->
+      <section class="container" style="max-width:800px; margin: 6rem auto;">
+        <h2 style="text-align:center; font-size:3rem; margin-bottom:4rem;">Questions Fréquentes</h2>
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item" style="border-bottom:1px solid var(--gray-line); padding:1.5rem 0; cursor:pointer;">
+            <div class="faq-question" style="display:flex; justify-content:space-between; font-size:1.2rem; font-family:var(--font-h3-lead);">
+              <span>Quel est le budget minimum pour une expérience MORE ?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" style="display:none; margin-top:1rem; color:rgba(24,24,24,0.7);">
+              <p>L'excellence demande des moyens à la hauteur de vos ambitions. Nos expériences "Founders" sont créées entièrement sur-mesure...</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="faq-item" style="border-bottom:1px solid var(--gray-line); padding:1.5rem 0; cursor:pointer;">
+            <div class="faq-question" style="display:flex; justify-content:space-between; font-size:1.2rem; font-family:var(--font-h3-lead);">
+              <span>Comment garantissez-vous que le moment reste intime ?</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" style="display:none; margin-top:1rem; color:rgba(24,24,24,0.7);">
+              <p>C'est précisément l'essence de notre approche "Quiet Luxury". Nous concevons chaque détail en amont pour qu'il s'efface le jour J...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MORE | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      body { background-color: var(--graphite); color: var(--ivory); }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar / Header Immersif -->
+    <header class="site-header header-light">
+      <div class="header-brand">
+        <span class="brand-name">MORE</span>
+      </div>
+      <div class="logo-center">
+        <img src="/images/logo-light.png" alt="MORE Logo" />
+      </div>
+      <nav class="main-nav">
+        <a href="/vision.html">About</a>
+        <a href="/experiences.html">Expériences</a>
+        <a href="/memory.html">Journal</a>
+        <a href="/contact.html" class="nav-inquire">Inquire</a>
+      </nav>
+    </header>
+
+    <main id="app" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+      <section style="margin-bottom: 4rem;">
+        <h1 style="font-size: 4rem; margin-bottom:1rem;">Commencer le récit.</h1>
+        <h3 class="subtitle" style="color: var(--champagne-soft); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.2em;">À ceux qui osent. L'Homme Moderne.</h3>
+      </section>
+
+      <form style="width: 100%; max-width: 600px;" action="#" method="POST">
+        <div style="margin-bottom: 2.5rem; position: relative;">
+          <input type="text" id="votre-nom" name="votre-nom" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(245, 240, 232, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0;" />
+          <label for="votre-nom" style="position: absolute; left: 0; top: 0.5rem; color: rgba(245, 240, 232, 0.5); pointer-events: none;">Votre Nom</label>
+        </div>
+        
+        <div style="margin-bottom: 2.5rem; position: relative;">
+          <input type="text" id="son-nom" name="son-nom" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(245, 240, 232, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0;" />
+          <label for="son-nom" style="position: absolute; left: 0; top: 0.5rem; color: rgba(245, 240, 232, 0.5); pointer-events: none;">Son Nom</label>
+        </div>
+
+        <div style="margin-bottom: 2.5rem; position: relative;">
+          <input type="text" id="periode" name="periode" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(245, 240, 232, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0;" />
+          <label for="periode" style="position: absolute; left: 0; top: 0.5rem; color: rgba(245, 240, 232, 0.5); pointer-events: none;">Période envisagée</label>
+        </div>
+
+        <div style="margin-bottom: 2.5rem; position: relative;">
+          <textarea id="description" name="description" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(245, 240, 232, 0.3); color: var(--ivory); font-family: var(--font-body); font-size: 1.1rem; padding: 0.5rem 0; min-height: 80px; resize:vertical;"></textarea>
+          <label for="description" style="position: absolute; left: 0; top: 0.5rem; color: rgba(245, 240, 232, 0.5); pointer-events: none;">Décrivez-nous le souvenir que vous souhaitez créer.</label>
+        </div>
+
+        <button type="submit" class="btn-story" style="margin-top: 2rem;">Envoyer la demande</button>
+      </form>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
