@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         menuClose.addEventListener('click', () => {
             overlayMenu.classList.remove('active');
         });
+
+        // Close menu when a link is clicked (better UX)
+        const overlayLinks = overlayMenu.querySelectorAll('a');
+        overlayLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                overlayMenu.classList.remove('active');
+            });
+        });
     }
 
     // FAQ Accordion Logic
