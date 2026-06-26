@@ -111,13 +111,13 @@
           <a href="./vision.html">ÀÀ propos</a>
           <a href="./contact.html" class="nav-inquire">Inquire</a>
         </nav>
-        <span class="mobile-menu-btn" id="mobile-menu-open" style="font-size: 1.5rem; text-transform: none; display: block;">≡</span>
+        <span class="mobile-menu-btn" id="mobile-menu-open" aria-label="Ouvrir le menu" role="button" tabindex="0" style="font-size: 1.5rem; text-transform: none; display: block;">≡</span>
       </div>
     </header>
 
     <!-- MOBILE MENU OVERLAY -->
     <div class="overlay-menu" id="overlay-menu">
-      <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
+      <div class="mobile-menu-btn" id="mobile-menu-close" aria-label="Fermer le menu" role="button" tabindex="0" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Archives</a>
@@ -137,69 +137,69 @@
       <div class="map-texture"></div>
       
       <!-- PINS -->
-      <div class="map-pin" id="pin-paris" onclick="showMapCard('paris')">
+      <div class="map-pin" tabindex="0" role="button" aria-label="Afficher la destination" id="pin-paris" onclick="showMapCard('paris')">
         <div class="pin-dot"></div>
         <div class="pin-label">Paris</div>
       </div>
-      <div class="map-pin" id="pin-amalfi" onclick="showMapCard('amalfi')">
+      <div class="map-pin" tabindex="0" role="button" aria-label="Afficher la destination" id="pin-amalfi" onclick="showMapCard('amalfi')">
         <div class="pin-dot"></div>
         <div class="pin-label">Amalfi Coast</div>
       </div>
-      <div class="map-pin" id="pin-como" onclick="showMapCard('como')">
+      <div class="map-pin" tabindex="0" role="button" aria-label="Afficher la destination" id="pin-como" onclick="showMapCard('como')">
         <div class="pin-dot"></div>
         <div class="pin-label">Lake Como</div>
       </div>
-      <div class="map-pin" id="pin-santorini" onclick="showMapCard('santorini')">
+      <div class="map-pin" tabindex="0" role="button" aria-label="Afficher la destination" id="pin-santorini" onclick="showMapCard('santorini')">
         <div class="pin-dot"></div>
         <div class="pin-label">Santorini</div>
       </div>
-      <div class="map-pin" id="pin-marrakech" onclick="showMapCard('marrakech')">
+      <div class="map-pin" tabindex="0" role="button" aria-label="Afficher la destination" id="pin-marrakech" onclick="showMapCard('marrakech')">
         <div class="pin-dot"></div>
         <div class="pin-label">Marrakech</div>
       </div>
-      <div class="map-pin" id="pin-provence" onclick="showMapCard('provence')">
+      <div class="map-pin" tabindex="0" role="button" aria-label="Afficher la destination" id="pin-provence" onclick="showMapCard('provence')">
         <div class="pin-dot"></div>
         <div class="pin-label">Provence</div>
       </div>
 
       <!-- INTERACTIVE CARDS -->
       <div class="map-card" id="card-paris">
-        <img src="./images/1.jpeg" alt="Paris" />
+        <img src="./images/1.jpeg" alt="Paris" / loading="lazy">
         <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Paris</h3>
         <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Toits privés, croisières sur la Seine et dîners étoilés.</p>
         <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
       </div>
       
       <div class="map-card" id="card-amalfi">
-        <img src="./images/2.jpeg" alt="Amalfi" />
+        <img src="./images/2.jpeg" alt="Amalfi" / loading="lazy">
         <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Amalfi Coast</h3>
         <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">La Dolce Vita absolue. Jardins suspendus et vues sur la mer Tyrrhénienne.</p>
         <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-como">
-        <img src="./images/3.jpeg" alt="Lake Como" />
+        <img src="./images/3.jpeg" alt="Lake Como" / loading="lazy">
         <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Lake Como</h3>
         <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Élégance intemporelle. Villas historiques et balades en bateau Riva.</p>
         <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-santorini">
-        <img src="./images/4.jpeg" alt="Santorini" />
+        <img src="./images/4.jpeg" alt="Santorini" / loading="lazy">
         <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Santorini</h3>
         <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Couchers de soleil mythiques, dômes bleus et architecture spectaculaire.</p>
         <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-marrakech">
-        <img src="./images/5.jpeg" alt="Marrakech" />
+        <img src="./images/5.jpeg" alt="Marrakech" / loading="lazy">
         <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Marrakech</h3>
         <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Oasis privées, désert étoilé et atmosphère envoûtante.</p>
         <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-provence">
-        <img src="./images/6.jpeg" alt="Provence" />
+        <img src="./images/6.jpeg" alt="Provence" / loading="lazy">
         <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Provence</h3>
         <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Champs de lavande, bastides authentiques et douceur de vivre.</p>
         <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
@@ -240,7 +240,7 @@
     <!-- WHATSAPP CTA -->
     <section class="cta-whatsapp-section">
       <div class="cta-w-image">
-        <img src="./images/cosmos_245288959.jpeg" alt="MORE Experience" class="img-cover" />
+        <img src="./images/cosmos_245288959.jpeg" alt="MORE Experience" class="img-cover" / loading="lazy">
       </div>
       <div class="cta-w-content">
         <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); font-family: var(--font-h1-h2); line-height: 1.1; margin-bottom: 1rem;">Un message<br>peut suffire.</h2>
