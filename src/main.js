@@ -1,22 +1,19 @@
 import './style.css';
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('MORE Experiences initialized (Gen Z Rich).');
+
     // Mobile Menu Logic
     const menuOpen = document.getElementById('mobile-menu-open');
     const menuClose = document.getElementById('mobile-menu-close');
     const overlayMenu = document.getElementById('overlay-menu');
 
-    if (menuOpen && overlayMenu) {
+    if (menuOpen && menuClose && overlayMenu) {
         menuOpen.addEventListener('click', () => {
             overlayMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
         });
-    }
-
-    if (menuClose && overlayMenu) {
         menuClose.addEventListener('click', () => {
             overlayMenu.classList.remove('active');
-            document.body.style.overflow = '';
         });
     }
 
@@ -24,15 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        if(question) {
+        if (question) {
             question.addEventListener('click', () => {
+                // Toggle active class
                 item.classList.toggle('active');
-                const icon = item.querySelector('.faq-icon');
-                if (item.classList.contains('active')) {
-                    icon.textContent = '-';
-                } else {
-                    icon.textContent = '+';
-                }
             });
         }
     });

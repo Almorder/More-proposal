@@ -3,65 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | The Amalfi Proposal</title>
+    <title>MORE | Amalfi Proposal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
     <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body>
-    <!-- HEADER -->
-    <header class="site-header">
-      <a href="./index.html" class="logo-left">
-        <img src="./images/logo-dark.png" alt="MORE" />
-      </a>
-      <nav class="nav-links">
-        <a href="./experiences.html">Expériences</a>
-        <a href="./destinations.html">Destinations</a>
-        <a href="./journal.html">Journal</a>
-        <a href="./vision.html">À propos</a>
-        <a href="./contact.html" class="nav-inquire">Inquire</a>
-      </nav>
-      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
+  <body style="background-color: var(--white);">
+    <!-- TRANSPARENT HEADER -->
+    <header class="home-header">
+      <div class="home-header-left">
+        <span>MORE</span>
+      </div>
+      <div class="home-header-center">
+        <a href="./index.html">
+          <img src="./images/logo-light.png" alt="MORE" />
+        </a>
+      </div>
+      <div class="home-header-right">
+        <nav class="transparent-nav">
+          <a href="./experiences.html">Expériences</a>
+          <a href="./destinations.html">Destinations</a>
+          <a href="./journal.html">Archives</a>
+          <a href="./vision.html">À propos</a>
+          <a href="./contact.html" class="transparent-inquire">Inquire</a>
+        </nav>
+        <span class="home-hamburger" id="mobile-menu-open">≡</span>
+      </div>
     </header>
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- OVERLAY MENU (Mobile) -->
     <div class="overlay-menu" id="overlay-menu">
       <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
-      <a href="./journal.html">Journal</a>
+      <a href="./journal.html">Archives</a>
       <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <main class="container" style="padding-top: 4rem;">
-      <a href="./experiences.html" class="backlink">← Retour aux expériences</a>
+    <!-- PRODUCT HERO -->
+    <section class="home-hero" style="height: 90vh;">
+      <div class="home-hero-bg">
+        <!-- Main proposal image -->
+        <img src="./images/3.jpeg" alt="Amalfi Proposal" class="img-cover" style="object-position: center;" />
+      </div>
+      <div class="home-hero-content">
+        <h1 style="font-size: clamp(4rem, 6vw, 6rem); margin-bottom: 1rem;">Amalfi Proposal</h1>
+        <p style="font-family: var(--font-h1-h2); font-size: 1.5rem; margin-bottom: 2.5rem;">An unforgettable evening above the Mediterranean.</p>
+        <a href="#inquire" class="btn-outline-white">INQUIRE</a>
+      </div>
+    </section>
 
-      <div class="hero-standard" style="padding: 0; margin-top: 2rem;">
-        <div class="hero-standard-text">
-          <p class="subtitle" style="margin-bottom: 1rem;">MARRIAGE PROPOSAL</p>
-          <h1 style="margin-bottom: 2rem;">The Amalfi Proposal</h1>
-          <p style="margin-bottom: 3rem; color: var(--blue-night);">An unforgettable evening above the Mediterranean. Un balcon privé surplombant les falaises d'Amalfi. Des milliers de bougies, un quatuor à cordes jouant votre morceau favori, et le soleil qui se couche sur la Méditerranée.</p>
-          <a href="./contact.html" class="btn-solid">Inquire about this experience</a>
+    <!-- PRODUCT GALLERY (Full width, white borders) -->
+    <section class="product-gallery">
+      <!-- Col 1 -->
+      <div class="pg-col pg-col-1">
+        <div class="pg-item pg-landscape"><img src="./images/2.jpeg" alt="Table setup" /></div>
+        <div class="pg-item pg-square" style="flex:1;"><img src="./images/4.jpeg" alt="Rings" /></div>
+      </div>
+      <!-- Col 2 -->
+      <div class="pg-col pg-col-2">
+        <div class="pg-item pg-square"><img src="./images/3.jpeg" alt="Couple" /></div>
+        <div class="pg-item pg-landscape" style="flex:1;"><img src="./images/2.jpeg" alt="Balcony" /></div>
+      </div>
+      <!-- Col 3 -->
+      <div class="pg-col pg-col-3">
+        <div class="pg-item pg-landscape"><img src="./images/5.jpeg" alt="Coast view" /></div>
+        <div class="pg-item pg-portrait" style="flex:1;"><img src="./images/1.jpeg" alt="Stairs night" /></div>
+      </div>
+    </section>
+
+    <!-- THE ESSENTIAL (Minimalist Text) -->
+    <section class="product-essential">
+      <h2 style="font-size: 3rem; font-weight: 300;">L'Essentiel</h2>
+      <p>Une terrasse entièrement privatisée dominant la mer Tyrrhénienne, sublimée par une scénographie florale sur-mesure et des centaines de bougies. Un chef privé et un photographe discret capturent l'instant où l'ordinaire devient éternel.</p>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-container">
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Que comprend exactement cette prestation ?</span>
+          <span class="faq-icon">+</span>
         </div>
-        <div class="hero-standard-img">
-          <img src="./images/3.jpeg" alt="Amalfi Proposal" class="img-cover" />
+        <div class="faq-answer">
+          <p>La prestation "Amalfi Proposal" inclut la privatisation totale du lieu pour la soirée, le design floral personnalisé selon vos goûts, la mise en place de l'éclairage romantique (bougies), un dîner gastronomique préparé par un chef privé (boissons incluses), et la présence invisible d'un photographe professionnel pour immortaliser le moment.</p>
         </div>
       </div>
 
-      <div class="thin-line" style="margin: 4rem 0;"></div>
-
-      <div class="grid-2">
-        <div class="card-img-wrap">
-          <img src="./images/5.jpeg" alt="Details" class="img-cover" />
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Pouvons-nous personnaliser le décor ou la musique ?</span>
+          <span class="faq-icon">+</span>
         </div>
-        <div class="card-img-wrap">
-          <img src="./images/6.jpeg" alt="Atmosphere" class="img-cover" />
+        <div class="faq-answer">
+          <p>Absolument. Lors de notre première consultation, nous établirons ensemble l'ambiance que vous souhaitez créer. Qu'il s'agisse des fleurs préférées de votre partenaire, d'un violoniste jouant votre chanson ou d'un menu spécifique, chaque détail est ajusté pour raconter votre histoire.</p>
         </div>
       </div>
-    </main>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Combien de temps à l'avance faut-il réserver ?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Pour garantir la disponibilité des lieux exclusifs sur la côte amalfitaine et de nos prestataires de confiance, nous recommandons de nous contacter au moins 3 à 4 mois à l'avance. Cependant, selon la période de l'année, des arrangements plus rapides sont parfois possibles.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- INQUIRE CALL TO ACTION -->
+    <section id="inquire" style="text-align: center; padding-bottom: 8rem;">
+      <a href="./contact.html" class="btn-solid-dark">COMMENCER LE RÉCIT</a>
+    </section>
 
     <!-- FOOTER -->
     <footer class="site-footer">
