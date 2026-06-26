@@ -11,22 +11,29 @@
     <script defer type="module" src="./src/main.js"></script>
   </head>
   <body>
-    <!-- HEADER -->
+    <!-- STANDARD HEADER (SOLID BACKGROUND) -->
     <header class="site-header">
-      <a href="./index.html" class="logo-left">
-        <img src="./images/logo-dark.png" alt="MORE" />
-      </a>
-      <nav class="nav-links">
-        <a href="./experiences.html">Expériences</a>
-        <a href="./destinations.html">Destinations</a>
-        <a href="./journal.html">Journal</a>
-        <a href="./vision.html">À propos</a>
-        <a href="./contact.html" class="nav-inquire">Inquire</a>
-      </nav>
-      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
+      <div class="home-header-left" style="flex:1; font-family: var(--font-h3-lead); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">
+        <span>MORE</span>
+      </div>
+      <div class="home-header-center" style="flex:1; display:flex; justify-content:center;">
+        <a href="./index.html">
+          <img src="./images/logo-dark.png" alt="MORE" style="height: 45px;" />
+        </a>
+      </div>
+      <div class="home-header-right" style="flex:1; display:flex; justify-content:flex-end; align-items:center; gap:2rem;">
+        <nav class="transparent-nav">
+          <a href="./experiences.html" style="color:var(--graphite);">Expériences</a>
+          <a href="./destinations.html" style="color:var(--graphite); opacity:1;">Destinations</a>
+          <a href="./journal.html" style="color:var(--graphite);">Journal</a>
+          <a href="./vision.html" style="color:var(--graphite);">About</a>
+          <a href="./contact.html" class="transparent-inquire" style="border-color:var(--graphite); color:var(--graphite);">Inquire</a>
+        </nav>
+        <span class="home-hamburger" id="mobile-menu-open" style="color:var(--graphite);">≡</span>
+      </div>
     </header>
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- OVERLAY MENU (Mobile) -->
     <div class="overlay-menu" id="overlay-menu">
       <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
@@ -36,55 +43,52 @@
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <main class="container" style="padding-top: 4rem;">
-      <a href="./index.html" class="backlink">← Accueil</a>
-
-      <div class="text-center" style="margin-bottom: 4rem; margin-top: 2rem;">
-        <p class="subtitle" style="margin-bottom: 1rem;">THE WORLD OF MORE</p>
-        <h2>We unlock the world's most guarded locations.</h2>
-      </div>
-
-      <!-- DESTINATION LIST -->
-      <div style="border-top: 1px solid var(--gray-line);">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--gray-line); padding: 3rem 0;">
-          <h2 style="font-size: 3rem; margin: 0;">01. Amalfi Coast</h2>
-          <a href="./product.html" class="btn-solid">Explore</a>
-        </div>
+    <!-- MOSAIC GRID (Full width, no margins) -->
+    <main class="mosaic-wrapper">
+      
+      <!-- Row 1 -->
+      <div class="mosaic-row">
+        <!-- Amalfi Coast (Large) -->
+        <a href="./product.html" class="mosaic-item span-large">
+          <img src="./images/3.jpeg" alt="Amalfi Coast" />
+          <h2>Amalfi Coast</h2>
+        </a>
         
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--gray-line); padding: 3rem 0;">
-          <h2 style="font-size: 3rem; margin: 0;">02. Lake Como</h2>
-          <a href="./product.html" class="btn-solid">Explore</a>
-        </div>
+        <!-- Lake Como (Med) -->
+        <a href="./product.html" class="mosaic-item span-med">
+          <img src="./images/4.jpeg" alt="Lake Como" />
+          <h2>Lake Como</h2>
+        </a>
 
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--gray-line); padding: 3rem 0;">
-          <h2 style="font-size: 3rem; margin: 0;">03. Paris</h2>
-          <a href="./product.html" class="btn-solid">Explore</a>
-        </div>
+        <!-- Paris (Tall/Med) -->
+        <a href="./product.html" class="mosaic-item span-tall">
+          <img src="./images/6.jpeg" alt="Paris" />
+          <h2>Paris</h2>
+        </a>
       </div>
+
+      <!-- Row 2 -->
+      <div class="mosaic-row">
+        <!-- Santorini (Med) -->
+        <a href="./product.html" class="mosaic-item span-med">
+          <img src="./images/5.jpeg" alt="Santorini" />
+          <h2>Santorini</h2>
+        </a>
+
+        <!-- Provence (Med) -->
+        <a href="./product.html" class="mosaic-item span-med">
+          <img src="./images/7.jpeg" alt="Provence" />
+          <h2>Provence</h2>
+        </a>
+
+        <!-- Marrakech (Large) -->
+        <a href="./product.html" class="mosaic-item span-large">
+          <img src="./images/8.jpeg" alt="Marrakech" />
+          <h2>Marrakech</h2>
+        </a>
+      </div>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div>
-        <img src="./images/logo-dark.png" alt="MORE" style="height:30px; margin-bottom:1rem;" />
-        <p style="font-size:0.8rem; color:var(--blue-night);">Maison de création d'expériences romantiques premium.</p>
-      </div>
-      <div>
-        <p class="subtitle">Explore</p>
-        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
-          <a href="./experiences.html">Expériences</a>
-          <a href="./destinations.html">Destinations</a>
-          <a href="./vision.html">À propos</a>
-        </div>
-      </div>
-      <div>
-        <p class="subtitle">Contact</p>
-        <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem;">
-          <a href="mailto:contact@more.com">contact@more.com</a>
-          <a href="https://wa.me/33667942463">WhatsApp</a>
-          <a href="./contact.html">Demander une consultation</a>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>
