@@ -123,69 +123,112 @@ h3 { font-family: var(--font-h3-lead); font-size: 1.2rem; letter-spacing: 0.05em
 }
 .btn-solid-dark:hover { background-color: transparent; color: var(--graphite); }
 
+
+/* ---------------------------------------------------
+   5-COLUMN MEGA FOOTER
+   --------------------------------------------------- */
+.site-footer-mega {
+  background-color: var(--ivory); /* Soft ivory background */
+  padding: 6rem 4vw 2rem;
+  border-top: 1px solid var(--gray-line);
+  color: var(--graphite);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 1fr 1fr;
+  gap: 4vw;
+  margin-bottom: 4rem;
+}
+/* Col 1: Brand */
+.footer-brand .footer-logo { height: 30px; margin-bottom: 1.5rem; display: block; }
+.footer-socials { display: flex; gap: 1rem; }
+.footer-socials a { font-size: 1.2rem; transition: opacity 0.3s; }
+
+/* Col 2: Newsletter */
+.footer-newsletter h4 {
+  font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;
+}
+.footer-newsletter p {
+  font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1.5rem; max-width: 300px;
+}
+.newsletter-form {
+  display: flex; border-bottom: 1px solid var(--graphite); padding-bottom: 0.5rem; max-width: 350px;
+}
+.newsletter-form input {
+  flex: 1; border: none; background: transparent; font-family: var(--font-body); font-size: 0.9rem; outline: none;
+}
+.newsletter-form button {
+  background: transparent; border: none; font-family: var(--font-h3-lead); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.3s;
+}
+.newsletter-form button:hover { opacity: 0.5; }
+
+/* Col 3, 4, 5: Links */
+.footer-links h5 {
+  font-family: var(--font-body); font-weight: 500; font-size: 0.85rem; margin-bottom: 1.5rem;
+}
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 0.8rem; }
+.footer-links a {
+  font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--graphite); }
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--gray-line); padding-top: 2rem;
+  font-family: var(--font-body); font-size: 0.7rem; color: rgba(24,24,24,0.5);
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .footer-brand { grid-column: span 2; }
+  .footer-newsletter { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-brand, .footer-newsletter { grid-column: span 1; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+
 /* ---------------------------------------------------
    PRODUCT PAGE (AMALFI PROPOSAL)
    --------------------------------------------------- */
-
-.product-gallery {
-  display: flex; gap: 1vw; padding: 1vw; background-color: var(--white); /* White borders between images */
-}
+.product-gallery { display: flex; gap: 1vw; padding: 1vw; background-color: var(--white); }
 .pg-col { display: flex; flex-direction: column; gap: 1vw; }
 .pg-col-1 { flex: 1.2; }
 .pg-col-2 { flex: 2; }
 .pg-col-3 { flex: 1.2; }
 .pg-item { position: relative; overflow: hidden; background: #eee; width: 100%; display: block; }
 .pg-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
 .pg-landscape { aspect-ratio: 16/9; }
 .pg-square { aspect-ratio: 1/1; }
 .pg-portrait { aspect-ratio: 3/4; }
-
-.product-essential {
-  max-width: 800px; margin: 6rem auto; text-align: center;
-}
+.product-essential { max-width: 800px; margin: 6rem auto; text-align: center; }
 .product-essential h2 { margin-bottom: 2rem; }
 .product-essential p { font-size: 1.1rem; color: rgba(24,24,24,0.8); }
 
 /* FAQ Accordion */
-.faq-container {
-  max-width: 800px; margin: 4rem auto 8rem; border-top: 1px solid var(--gray-line);
-}
-.faq-item {
-  border-bottom: 1px solid var(--gray-line);
-}
-.faq-question {
-  display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; cursor: pointer;
-  font-family: var(--font-h1-h2); font-size: 1.5rem; color: var(--graphite);
-}
-.faq-icon {
-  font-size: 1.5rem; font-weight: 300; transition: transform 0.3s;
-}
+.faq-container { max-width: 800px; margin: 4rem auto 8rem; border-top: 1px solid var(--gray-line); }
+.faq-item { border-bottom: 1px solid var(--gray-line); }
+.faq-question { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; cursor: pointer; font-family: var(--font-h1-h2); font-size: 1.5rem; color: var(--graphite); }
+.faq-icon { font-size: 1.5rem; font-weight: 300; transition: transform 0.3s; }
 .faq-item.active .faq-icon { transform: rotate(45deg); }
-.faq-answer {
-  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;
-  font-family: var(--font-body); font-size: 1rem; color: rgba(24,24,24,0.7);
-}
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; font-family: var(--font-body); font-size: 1rem; color: rgba(24,24,24,0.7); }
 .faq-item.active .faq-answer { max-height: 500px; padding-bottom: 1.5rem; }
-
 
 /* ---------------------------------------------------
    ARCHIVES PAGE (JOURNAL) SPECIFICS
    --------------------------------------------------- */
 .archives-hero { height: 70vh; justify-content: center; padding: 0; text-align: center; }
 .archives-hero-bg::after { background: rgba(0,0,0,0.3); }
-
-/* Tabs */
-.archives-tabs {
-  display: flex; justify-content: center; gap: 4rem; padding: 2rem 0; border-bottom: 1px solid var(--gray-line); margin: 0 4vw 4rem;
-}
-.archives-tabs span {
-  font-family: var(--font-h3-lead); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--graphite); opacity: 0.5; cursor: pointer; padding-bottom: 0.5rem; transition: opacity 0.3s;
-}
+.archives-tabs { display: flex; justify-content: center; gap: 4rem; padding: 2rem 0; border-bottom: 1px solid var(--gray-line); margin: 0 4vw 4rem; }
+.archives-tabs span { font-family: var(--font-h3-lead); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--graphite); opacity: 0.5; cursor: pointer; padding-bottom: 0.5rem; transition: opacity 0.3s; }
 .archives-tabs span.active { opacity: 1; border-bottom: 2px solid var(--graphite); }
 .archives-tabs span:hover { opacity: 1; }
 
-/* Flex Masonry */
 .archives-masonry { display: flex; gap: 1vw; padding: 0 4vw 6rem; }
 .am-col { display: flex; flex-direction: column; gap: 1vw; }
 .am-col-1 { flex: 2.2; }
@@ -200,14 +243,10 @@ h3 { font-family: var(--font-h3-lead); font-size: 1.2rem; letter-spacing: 0.05em
 .aspect-portrait { aspect-ratio: 3/4; }
 .aspect-story { aspect-ratio: 9/16; }
 
-/* Play Button */
-.play-btn {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; border: 2px solid var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2; background: rgba(0,0,0,0.2); transition: background 0.3s;
-}
+.play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; border: 2px solid var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 2; background: rgba(0,0,0,0.2); transition: background 0.3s; }
 .play-btn::after { content: ''; display: block; width: 0; height: 0; border-style: solid; border-width: 8px 0 8px 12px; border-color: transparent transparent transparent var(--white); margin-left: 4px; }
 .am-item:hover .play-btn { background: rgba(0,0,0,0.5); }
 
-/* Story Card */
 .story-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 30%, rgba(0,0,0,0.8) 100%); pointer-events: none; }
 .story-header { position: absolute; top: 1rem; left: 1rem; right: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 2; color: var(--white); }
 .story-user { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.75rem; }
@@ -216,12 +255,10 @@ h3 { font-family: var(--font-h3-lead); font-size: 1.2rem; letter-spacing: 0.05em
 .story-text { font-family: var(--font-h1-h2); font-size: 1.2rem; margin-bottom: 1rem; line-height: 1.2; }
 .story-input { display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.4); border-radius: 40px; padding: 0.5rem 1rem; font-family: var(--font-body); font-size: 0.7rem; opacity: 0.8; }
 
-/* Section Header */
 .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; border-bottom: 1px solid var(--gray-line); padding-bottom: 1rem; }
 .section-header h2 { font-size: 2.5rem; }
 .section-header a { font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--champagne-soft); }
 
-/* Insta Posts */
 .insta-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5vw; padding-bottom: 6rem; }
 .insta-card { background: transparent; }
 .insta-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
@@ -231,19 +268,12 @@ h3 { font-family: var(--font-h3-lead); font-size: 1.2rem; letter-spacing: 0.05em
 .insta-footer p { font-family: var(--font-body); font-size: 0.75rem; color: var(--graphite); line-height: 1.3; }
 .insta-footer span { font-size: 0.65rem; color: rgba(24,24,24,0.5); }
 
-/* Testimonials */
 .testimonial-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5vw; padding-bottom: 6rem; }
 .testi-card { padding: 2rem 1.5rem; border: 1px solid var(--gray-line); display: flex; flex-direction: column; justify-content: space-between; min-height: 250px; }
 .testi-header p { font-family: var(--font-h1-h2); font-size: 1.2rem; color: var(--graphite); margin-bottom: 0.2rem; }
 .testi-header span { font-family: var(--font-body); font-size: 0.65rem; color: rgba(24,24,24,0.5); text-transform: uppercase; letter-spacing: 0.05em; display: block; }
 .testi-quote { font-family: var(--font-h1-h2); font-size: 1.3rem; line-height: 1.4; color: var(--graphite); margin: 1.5rem 0; }
 .testi-footer { font-family: var(--font-h3-lead); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--champagne-soft); }
-
-/* FOOTER */
-.site-footer {
-  padding: 4rem 4vw; border-top: 1px solid var(--gray-line); margin-top: 4rem;
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4vw; background-color: var(--ivory);
-}
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
