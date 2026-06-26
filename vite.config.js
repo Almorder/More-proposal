@@ -9,7 +9,6 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         vision: resolve(__dirname, 'vision.html'),
         experiences: resolve(__dirname, 'experiences.html'),
-        memory: resolve(__dirname, 'memory.html'),
         journal: resolve(__dirname, 'journal.html'),
         destinations: resolve(__dirname, 'destinations.html'),
         product: resolve(__dirname, 'product.html'),
