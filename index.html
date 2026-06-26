@@ -10,23 +10,25 @@
     <link rel="stylesheet" href="./src/style.css" />
     <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body>
-    <!-- HEADER -->
-    <header class="site-header">
-      <a href="./index.html" class="logo-left">
-        <img src="./images/logo-dark.png" alt="MORE" />
-      </a>
-      <nav class="nav-links">
-        <a href="./experiences.html">Expériences</a>
-        <a href="./destinations.html">Destinations</a>
-        <a href="./journal.html">Journal</a>
-        <a href="./vision.html">À propos</a>
-        <a href="./contact.html" class="nav-inquire">Inquire</a>
-      </nav>
-      <div class="mobile-menu-btn" id="mobile-menu-open">Menu</div>
+  <body style="background-color: var(--graphite);">
+    
+    <!-- TRANSPARENT HOME HEADER -->
+    <header class="home-header">
+      <div class="home-header-left">
+        <span>MORE</span>
+      </div>
+      <div class="home-header-center">
+        <!-- Logo 'M' in white (assuming logo-light is the white M) -->
+        <a href="./index.html">
+          <img src="./images/logo-light.png" alt="MORE" />
+        </a>
+      </div>
+      <div class="home-header-right">
+        <span class="home-hamburger" id="mobile-menu-open">≡</span>
+      </div>
     </header>
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- OVERLAY MENU -->
     <div class="overlay-menu" id="overlay-menu">
       <div class="mobile-menu-btn" id="mobile-menu-close" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
@@ -36,51 +38,58 @@
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <main>
-      <!-- HERO -->
-      <section class="container hero-standard">
-        <div class="hero-standard-text">
-          <p class="subtitle" style="margin-bottom: 1rem;">MORE Experiences</p>
-          <h1 style="margin-bottom: 2rem; max-width: 500px;">Stories worth remembering.</h1>
-          <p style="margin-bottom: 3rem; max-width: 400px; color: var(--blue-night);">Nous créons des moments romantiques haut de gamme conçus pour s'inscrire dans l'éternité.</p>
-          <a href="./experiences.html" class="btn-solid">Discover our experiences</a>
-        </div>
-        <div class="hero-standard-img">
-          <img src="./images/1.jpeg" alt="Hero" class="img-cover" />
-        </div>
-      </section>
+    <!-- MAIN HERO -->
+    <section class="home-hero">
+      <div class="home-hero-bg">
+        <!-- Image from the mockup: couple on balcony -->
+        <img src="./images/3.jpeg" alt="Proposal on a balcony" class="img-cover" style="object-position: center;" />
+      </div>
+      <div class="home-hero-content">
+        <h1>Moments<br>beautiful enough<br>to become memories.</h1>
+        <a href="./contact.html" class="btn-outline-white">BEGIN YOUR STORY</a>
+      </div>
+    </section>
 
-      <!-- CATEGORIES GRID -->
-      <section class="container" style="padding-top: 4rem;">
-        <div class="thin-line"></div>
-        <div class="grid-3">
-          <div class="card-clean">
-            <p class="subtitle">STORIES</p>
-            <h3>The beginning<br>of forever</h3>
-            <div class="card-img-wrap" style="margin: 1rem 0;">
-              <img src="./images/2.jpeg" class="img-cover" alt="Proposals" />
-            </div>
-            <a href="./product.html" class="subtitle" style="color: var(--graphite);">Read story →</a>
+    <!-- HORIZONTAL BANNER -->
+    <section class="home-banner">
+      <div class="home-banner-bg">
+        <!-- Darker image from the mockup: couple profile -->
+        <img src="./images/8.jpeg" alt="Couple" class="img-cover" style="object-position: center top;" />
+      </div>
+      <span>Dream</span>
+      <span>Plan</span>
+      <span>Experience</span>
+      <span>Remember</span>
+    </section>
+
+    <!-- CATEGORIES GRID -->
+    <section class="home-categories">
+      <div class="home-grid-3">
+        <!-- Proposals -->
+        <a href="./product.html" class="home-cat-card">
+          <div class="home-cat-img">
+            <img src="./images/2.jpeg" alt="Proposals" />
           </div>
-          <div class="card-clean">
-            <p class="subtitle">DESTINATIONS</p>
-            <h3>Lake Como<br>Timeless by nature</h3>
-            <div class="card-img-wrap" style="margin: 1rem 0;">
-              <img src="./images/4.jpeg" class="img-cover" alt="Lake Como" />
-            </div>
-            <a href="./destinations.html" class="subtitle" style="color: var(--graphite);">Discover →</a>
+          <h2 class="home-cat-title">Proposals</h2>
+        </a>
+
+        <!-- Escapes -->
+        <a href="./destinations.html" class="home-cat-card">
+          <div class="home-cat-img">
+            <img src="./images/4.jpeg" alt="Escapes" />
           </div>
-          <div class="card-clean">
-            <p class="subtitle">MOMENTS</p>
-            <h3>Details that<br>stay with you</h3>
-            <div class="card-img-wrap" style="margin: 1rem 0;">
-              <img src="./images/6.jpeg" class="img-cover" alt="Details" />
-            </div>
-            <a href="./journal.html" class="subtitle" style="color: var(--graphite);">View moments →</a>
+          <h2 class="home-cat-title">Escapes</h2>
+        </a>
+
+        <!-- Celebrations -->
+        <a href="./journal.html" class="home-cat-card">
+          <div class="home-cat-img">
+            <img src="./images/6.jpeg" alt="Celebrations" />
           </div>
-        </div>
-      </section>
-    </main>
+          <h2 class="home-cat-title">Celebrations</h2>
+        </a>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -105,5 +114,6 @@
         </div>
       </div>
     </footer>
+    
   </body>
 </html>
