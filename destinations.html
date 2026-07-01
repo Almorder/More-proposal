@@ -15,8 +15,8 @@
         position: relative;
         width: 100%;
         height: 80vh;
-        background-color: #E8E3DB;
-        background-image: url('./images/world-map-bg.png');
+        background-color: var(--graphite);
+        background-image: url('./images/luxury-map-bg.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -25,8 +25,8 @@
       .map-texture {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
-        opacity: 0.05;
-        background-image: radial-gradient(var(--graphite) 1px, transparent 1px);
+        opacity: 0.03;
+        background-image: radial-gradient(var(--ivory) 1px, transparent 1px);
         background-size: 20px 20px;
         pointer-events: none;
       }
@@ -45,9 +45,9 @@
       }
       .pin-dot {
         width: 14px; height: 14px;
-        background-color: var(--graphite);
+        background-color: var(--champagne);
         border-radius: 50%;
-        box-shadow: 0 0 0 4px rgba(24,24,24,0.1);
+        box-shadow: 0 0 0 4px rgba(183,156,120,0.1);
         transition: all 0.4s ease;
         position: relative;
       }
@@ -57,17 +57,17 @@
         top: 50%; left: 50%;
         width: 14px; height: 14px;
         border-radius: 50%;
-        border: 2px solid var(--graphite);
+        border: 2px solid var(--champagne);
         transform: translate(-50%, -50%);
         animation: pulse-ring 2s ease infinite;
         opacity: 0;
       }
       .map-pin.active .pin-dot {
-        background-color: var(--champagne) !important;
-        box-shadow: 0 0 0 6px rgba(183,156,120,0.25);
+        background-color: var(--white) !important;
+        box-shadow: 0 0 0 6px rgba(255,255,255,0.25);
       }
       .map-pin.active .pin-dot::after {
-        border-color: var(--champagne);
+        border-color: var(--white);
       }
       @keyframes pulse-ring {
         0% { width: 14px; height: 14px; opacity: 0.6; }
@@ -78,17 +78,19 @@
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
-        color: var(--graphite);
-        background: rgba(245, 240, 232, 0.9);
+        color: var(--ivory);
+        background: rgba(24, 24, 24, 0.9);
         padding: 6px 12px;
         border-radius: 4px;
         backdrop-filter: blur(8px);
         transition: all 0.3s ease;
         font-weight: 500;
+        border: 1px solid rgba(255,255,255,0.1);
       }
       .map-pin:hover .pin-label {
-        background: var(--graphite);
-        color: var(--ivory);
+        background: var(--champagne);
+        color: var(--graphite);
+        border-color: var(--champagne);
       }
       .map-card {
         position: absolute;
@@ -198,44 +200,44 @@
       <!-- INTERACTIVE CARDS -->
       <div class="map-card" id="card-paris">
         <img src="./images/cosmos_78733047.jpeg" alt="Paris" loading="lazy" />
-        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Paris</h3>
-        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Toits privés, croisières sur la Seine et dîners étoilés.</p>
-        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem;">Paris</h3>
+        <p style="font-size: 0.9rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Toits privés, croisières sur la Seine et dîners étoilés.</p>
+        <a href="./product-paris.html" class="btn-solid-dark" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; text-align: center;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-amalfi">
-        <img src="./images/cosmos_31627114.jpeg" alt="Amalfi Coast" loading="lazy" />
-        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Amalfi Coast</h3>
-        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">La Dolce Vita absolue. Jardins suspendus et vues sur la mer Tyrrhénienne.</p>
-        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+        <img src="./images/cosmos_31627114.jpeg" alt="Amalfi" loading="lazy" />
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem;">Côte Amalfitaine</h3>
+        <p style="font-size: 0.9rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">La Dolce Vita absolue. Jardins suspendus et vues sur la mer Tyrrhénienne.</p>
+        <a href="./product-amalfi.html" class="btn-solid-dark" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; text-align: center;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-como">
         <img src="./images/cosmos_324419349.jpeg" alt="Lake Como" loading="lazy" />
-        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Lake Como</h3>
-        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Élégance intemporelle. Villas historiques et balades en bateau Riva.</p>
-        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem;">Lac de Côme</h3>
+        <p style="font-size: 0.9rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Élégance intemporelle. Villas historiques et balades en bateau Riva.</p>
+        <a href="./product-como.html" class="btn-solid-dark" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; text-align: center;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-santorini">
         <img src="./images/cosmos_369471361.jpeg" alt="Santorini" loading="lazy" />
-        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Santorini</h3>
-        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Couchers de soleil mythiques, dômes bleus et architecture spectaculaire.</p>
-        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem;">Santorin</h3>
+        <p style="font-size: 0.9rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Couchers de soleil mythiques, dômes bleus et architecture spectaculaire.</p>
+        <a href="./product-santorini.html" class="btn-solid-dark" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; text-align: center;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-marrakech">
         <img src="./images/cosmos_642438921.jpeg" alt="Marrakech" loading="lazy" />
-        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Marrakech</h3>
-        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Oasis privées, désert étoilé et atmosphère envoûtante.</p>
-        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem;">Marrakech</h3>
+        <p style="font-size: 0.9rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Oasis privées, désert étoilé et atmosphère envoûtante.</p>
+        <a href="./product-marrakech.html" class="btn-solid-dark" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; text-align: center;">Voir les expériences</a>
       </div>
 
       <div class="map-card" id="card-provence">
         <img src="./images/cosmos_1078879472.jpeg" alt="Provence" loading="lazy" />
-        <h3 style="font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem;">Provence</h3>
-        <p style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Champs de lavande, bastides authentiques et douceur de vivre.</p>
-        <a href="./product.html" style="font-family: var(--font-h3-lead); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--graphite); padding-bottom: 2px;">Voir les expériences</a>
+        <h3 style="font-family: var(--font-h1-h2); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem;">Provence</h3>
+        <p style="font-size: 0.9rem; color: rgba(24,24,24,0.7); margin-bottom: 1rem;">Champs de lavande, bastides authentiques et douceur de vivre.</p>
+        <a href="./product-provence.html" class="btn-solid-dark" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; text-align: center;">Voir les expériences</a>
       </div>
     </section>
 

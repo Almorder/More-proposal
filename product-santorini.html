@@ -1,108 +1,36 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | Expériences</title>
+    <title>MORE | Sunset in Santorini</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
     <script defer type="module" src="./src/main.js"></script>
-    <style>
-      .xp-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3vw 2.5vw;
-        padding: 0 4vw;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-      .xp-card {
-        display: flex;
-        flex-direction: column;
-      }
-      .xp-card-img {
-        aspect-ratio: 3 / 4;
-        overflow: hidden;
-        position: relative;
-      }
-      .xp-card-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.8s ease;
-      }
-      .xp-card:hover .xp-card-img img {
-        transform: scale(1.05);
-      }
-      .xp-card-body {
-        padding: 1.5rem 0 0;
-      }
-      .xp-card-body h3 {
-        font-family: var(--font-h1-h2);
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
-        font-weight: 400;
-        margin-bottom: 0.5rem;
-        color: var(--graphite);
-      }
-      .xp-card-body p {
-        font-family: var(--font-body);
-        font-size: 0.95rem;
-        color: rgba(24,24,24,0.65);
-        margin-bottom: 1.2rem;
-        line-height: 1.5;
-      }
-      .xp-card-link {
-        font-family: var(--font-h3-lead);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--graphite);
-        border-bottom: 1px solid var(--graphite);
-        padding-bottom: 3px;
-        text-decoration: none;
-        transition: opacity 0.3s;
-      }
-      .xp-card-link:hover {
-        opacity: 0.6;
-      }
-      @media (max-width: 900px) {
-        .xp-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 4vw 3vw;
-        }
-      }
-      @media (max-width: 560px) {
-        .xp-grid {
-          grid-template-columns: 1fr;
-          gap: 6vw;
-          padding: 0 6vw;
-        }
-      }
-    </style>
   </head>
   <body style="background-color: var(--ivory);">
 
-    <!-- TRANSPARENT HEADER -->
-    <header class="home-header">
-      <div class="home-header-left">
-        <span>MORE</span>
+    <!-- STANDARD HEADER (dark text on ivory) -->
+    <header class="site-header">
+      <div style="flex: 1;">
+        <span style="font-family: var(--font-h3-lead); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">MORE</span>
       </div>
-      <div class="home-header-center">
+      <div style="flex: 1; display: flex; justify-content: center;">
         <a href="./index.html">
-          <img src="./images/logo-light.png" alt="MORE" />
+          <img src="./images/logo-dark.png" alt="MORE" style="height: 45px;" />
         </a>
       </div>
-      <div class="home-header-right">
-        <nav class="transparent-nav">
-          <a href="./experiences.html" style="border-bottom: 1px solid var(--white); padding-bottom: 2px;">Expériences</a>
+      <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 2rem;">
+        <nav class="nav-links">
+          <a href="./experiences.html">Expériences</a>
           <a href="./destinations.html">Destinations</a>
           <a href="./journal.html">Archives</a>
           <a href="./vision.html">À propos</a>
-          <a href="./contact.html" class="transparent-inquire">Inquire</a>
+          <a href="./contact.html" class="nav-inquire">Inquire</a>
         </nav>
-        <span class="home-hamburger" id="mobile-menu-open" aria-label="Ouvrir le menu" role="button" tabindex="0">≡</span>
+        <span class="mobile-menu-btn" id="mobile-menu-open" aria-label="Ouvrir le menu" role="button" tabindex="0" style="font-size: 1.5rem; text-transform: none;">≡</span>
       </div>
     </header>
 
@@ -116,96 +44,72 @@
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <!-- HERO SECTION -->
-    <section class="home-hero" style="height: 70vh;">
-      <div class="home-hero-bg">
-        <img src="./images/cosmos_120081130.jpeg" alt="Nos Expériences MORE" class="img-cover" loading="lazy" />
+    <!-- BACKLINK -->
+    <div class="container" style="padding-top: 2rem;">
+      <a href="./experiences.html" class="backlink">← Retour aux expériences</a>
+    </div>
+
+    <!-- PRODUCT GALLERY (3 columns) -->
+    <section class="product-gallery">
+      <!-- Col 1 -->
+      <div class="pg-col pg-col-1">
+        <div class="pg-item pg-landscape"><img src="./images/cosmos_416043126.jpeg" alt="Terrasse amalfitaine au crépuscule" loading="lazy" /></div>
+        <div class="pg-item pg-square" style="flex:1;"><img src="./images/cosmos_369471361.jpeg" alt="Décoration florale sur-mesure" loading="lazy" /></div>
       </div>
-      <div class="home-hero-content">
-        <p class="subtitle" style="color: var(--white); margin-bottom: 1rem; justify-content: center;">CURATED EXPERIENCES</p>
-        <h1 style="font-size: clamp(3.5rem, 6vw, 6rem); margin-bottom: 1rem;">Nos Expériences</h1>
-        <p style="font-family: var(--font-body); opacity: 0.8; max-width: 550px; margin: 0 auto;">Des moments conçus sur mesure, orchestrés avec précision, vécus avec émotion.</p>
+      <!-- Col 2 -->
+      <div class="pg-col pg-col-2">
+        <div class="pg-item pg-portrait" style="flex:1;"><img src="./images/cosmos_1535491183.jpeg" alt="Couple sur la côte amalfitaine" loading="lazy" /></div>
+      </div>
+      <!-- Col 3 -->
+      <div class="pg-col pg-col-3">
+        <div class="pg-item pg-landscape"><img src="./images/cosmos_246000094.jpeg" alt="Vue sur la mer Tyrrhénienne" loading="lazy" /></div>
+        <div class="pg-item pg-square" style="flex:1;"><img src="./images/cosmos_2064289037.jpeg" alt="Dîner aux chandelles" loading="lazy" /></div>
       </div>
     </section>
 
-    <!-- EXPERIENCE CARDS GRID -->
-    <main style="padding: 6rem 0 8rem;">
-      <div class="xp-grid">
+    <!-- PRODUCT ESSENTIAL -->
+    <section class="product-essential">
+      <h2 style="font-size: 3rem; font-weight: 300;">Sunset in Santorini</h2>
+      <p>Un moment suspendu face à la caldeira au coucher du soleil. Une terrasse privée au-dessus des dômes bleus d'Oia, éclairée à la lueur des bougies, avec un dîner exclusif préparé par un chef étoilé local.</p>
+    </section>
 
-        <!-- Card 1 -->
-        <div class="xp-card">
-          <div class="xp-card-img">
-            <img src="./images/cosmos_1230863684.jpeg" alt="The Amalfi Proposal" loading="lazy" />
-          </div>
-          <div class="xp-card-body">
-            <h3>The Amalfi Proposal</h3>
-            <p>Demande en mariage sur la côte amalfitaine</p>
-            <a href="./product-amalfi.html" class="xp-card-link">Découvrir</a>
-          </div>
+    <!-- FAQ ACCORDION -->
+    <section class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Combien de temps à l'avance faut-il réserver ?</span>
+          <span class="faq-icon">+</span>
         </div>
-
-        <!-- Card 2 -->
-        <div class="xp-card">
-          <div class="xp-card-img">
-            <img src="./images/cosmos_1500430456.jpeg" alt="Sunset in Santorini" loading="lazy" />
-          </div>
-          <div class="xp-card-body">
-            <h3>Sunset in Santorini</h3>
-            <p>Soirée privée face à la caldeira</p>
-            <a href="./product-santorini.html" class="xp-card-link">Découvrir</a>
-          </div>
+        <div class="faq-answer">
+          <p>Santorin est très prisée. Nous conseillons de réserver 4 à 6 mois à l'avance, surtout pour la haute saison (mai à septembre).</p>
         </div>
-
-        <!-- Card 3 -->
-        <div class="xp-card">
-          <div class="xp-card-img">
-            <img src="./images/cosmos_1535491183.jpeg" alt="Paris Rooftop" loading="lazy" />
-          </div>
-          <div class="xp-card-body">
-            <h3>Paris Rooftop</h3>
-            <p>Dîner secret sur les toits de Paris</p>
-            <a href="./product-paris.html" class="xp-card-link">Découvrir</a>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="xp-card">
-          <div class="xp-card-img">
-            <img src="./images/cosmos_1274308923.jpeg" alt="Lake Como Escape" loading="lazy" />
-          </div>
-          <div class="xp-card-body">
-            <h3>Lake Como Escape</h3>
-            <p>Week-end romantique au bord du lac</p>
-            <a href="./product-como.html" class="xp-card-link">Découvrir</a>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="xp-card">
-          <div class="xp-card-img">
-            <img src="./images/cosmos_198496289.jpeg" alt="Marrakech Nights" loading="lazy" />
-          </div>
-          <div class="xp-card-body">
-            <h3>Marrakech Nights</h3>
-            <p>Riad privé sous les étoiles du désert</p>
-            <a href="./product-marrakech.html" class="xp-card-link">Découvrir</a>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="xp-card">
-          <div class="xp-card-img">
-            <img src="./images/cosmos_1225314833.jpeg" alt="Provence Lavender" loading="lazy" />
-          </div>
-          <div class="xp-card-body">
-            <h3>Provence Lavender</h3>
-            <p>Escapade au cœur des champs de lavande</p>
-            <a href="./product-provence.html" class="xp-card-link">Découvrir</a>
-          </div>
-        </div>
-
       </div>
-    </main>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Quel est le budget moyen ?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Chaque expérience est sur-mesure. Nos prestations commencent à partir de 5 000€ et peuvent aller bien au-delà selon vos souhaits.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Peut-on personnaliser chaque détail ?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Absolument. C'est notre raison d'être. Chaque fleur, chaque note de musique, chaque plat est choisi avec vous.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BUTTON -->
+    <section style="text-align: center; padding-bottom: 8rem;">
+      <a href="./contact.html" class="btn-solid-dark">COMMENCER LE RÉCIT</a>
+    </section>
 
     <!-- MEGA FOOTER -->
     <footer class="site-footer-mega">
@@ -270,5 +174,6 @@
         <p>All rights reserved. | Mentions Légales</p>
       </div>
     </footer>
+
   </body>
 </html>
