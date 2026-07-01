@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,10 @@
     <script defer type="module" src="./src/main.js"></script>
   </head>
   <body>
-    <!-- TRANSPARENT HEADER -->
+
+    <!-- ═══════════════════════════════════════════════
+         TRANSPARENT HEADER
+         ═══════════════════════════════════════════════ -->
     <header class="home-header">
       <div class="home-header-left">
         <span>MORE</span>
@@ -26,134 +29,136 @@
           <a href="./experiences.html">Expériences</a>
           <a href="./destinations.html">Destinations</a>
           <a href="./journal.html" style="border-bottom: 1px solid var(--white); padding-bottom: 2px;">Archives</a>
-          <a href="./vision.html">ÀÀ propos</a>
+          <a href="./vision.html">À propos</a>
           <a href="./contact.html" class="transparent-inquire">Inquire</a>
         </nav>
         <span class="home-hamburger" id="mobile-menu-open" aria-label="Ouvrir le menu" role="button" tabindex="0">≡</span>
       </div>
     </header>
 
-    <!-- OVERLAY MENU (Mobile) -->
+    <!-- ═══════════════════════════════════════════════
+         OVERLAY MENU (Mobile)
+         ═══════════════════════════════════════════════ -->
     <div class="overlay-menu" id="overlay-menu">
       <div class="mobile-menu-btn" id="mobile-menu-close" aria-label="Fermer le menu" role="button" tabindex="0" style="position:absolute; top:2.5rem; right:4vw;">Close</div>
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Archives</a>
-      <a href="./vision.html">ÀÀ propos</a>
+      <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <!-- ARCHIVES HERO -->
+    <!-- ═══════════════════════════════════════════════
+         ARCHIVES HERO (70vh)
+         ═══════════════════════════════════════════════ -->
     <section class="home-hero archives-hero">
       <div class="home-hero-bg archives-hero-bg">
-        <img src="./images/3.jpeg" alt="Couple from back" class="img-cover" style="object-position: center 30%;" / loading="lazy">
+        <img src="./images/archives-hero.png" alt="Archives — Our Visual Diary" class="img-cover" style="object-position: center 30%;" loading="lazy" />
       </div>
       <div class="home-hero-content">
         <h1 style="font-size: clamp(4rem, 6vw, 6rem); margin-bottom: 1rem;">Archives</h1>
-        <p style="font-family: var(--font-h1-h2); font-style: italic; font-size: 1.5rem;">Des moments vécus. Des souvenirs laissés.</p>
+        <p style="font-family: var(--font-h1-h2); font-style: italic; font-size: 1.5rem;">Our Visual Diary</p>
       </div>
     </section>
 
-    <!-- FILTER TABS -->
+    <!-- ═══════════════════════════════════════════════
+         FILTER TABS
+         ═══════════════════════════════════════════════ -->
     <div class="archives-tabs">
-      <span class="active">IMAGES</span>
-      <span>FILMS</span>
-      <span>PARTAGES</span>
-      <span>MOTS</span>
+      <span class="active">Tout</span>
+      <span>Reels</span>
+      <span>Stories</span>
+      <span>Posts</span>
     </div>
 
-    <!-- MAIN MASONRY -->
+    <!-- ═══════════════════════════════════════════════
+         MASONRY GRID
+         ═══════════════════════════════════════════════ -->
     <main class="archives-masonry">
-      <!-- Col 1 (Large + 2 Squares) -->
+      <!-- Col 1: landscape video + story-card -->
       <div class="am-col am-col-1">
         <a href="#" class="am-item aspect-landscape" style="aspect-ratio: 16/10;">
-          <img src="./images/2.jpeg" alt="Candlelit dinner" / loading="lazy">
-        </a>
-        <div style="display:flex; gap:1vw;">
-          <a href="#" class="am-item aspect-square" style="flex:1;">
-            <div class="play-btn"></div>
-            <img src="./images/4.jpeg" alt="Pool" style="filter: grayscale(100%);" / loading="lazy">
-          </a>
-          <a href="#" class="am-item aspect-square" style="flex:1;">
-            <img src="./images/1.jpeg" alt="Night view" / loading="lazy">
-          </a>
-        </div>
-      </div>
-
-      <!-- Col 2 (Portrait + Square) -->
-      <div class="am-col am-col-2">
-        <a href="#" class="am-item aspect-portrait">
           <div class="play-btn"></div>
-          <img src="./images/3.jpeg" alt="Couple walking" / loading="lazy">
+          <img src="./images/cosmos_105397273.jpeg" alt="Vidéo romantique au coucher de soleil" loading="lazy" />
         </a>
-        <a href="#" class="am-item aspect-square">
-          <img src="./images/5.jpeg" alt="Pool view" / loading="lazy">
-        </a>
-      </div>
-
-      <!-- Col 3 (Square + Square) -->
-      <div class="am-col am-col-3">
-        <a href="#" class="am-item aspect-square">
-          <img src="./images/8.jpeg" alt="Boat" / loading="lazy">
-        </a>
-        <a href="#" class="am-item aspect-square" style="flex: 1.5;">
-          <img src="./images/6.jpeg" alt="Coast" / loading="lazy">
-        </a>
-      </div>
-
-      <!-- Col 4 (Stories) -->
-      <div class="am-col am-col-4">
         <a href="#" class="am-item aspect-story story-card">
-          <img src="./images/3.jpeg" alt="Story" style="filter: grayscale(100%);" / loading="lazy">
+          <img src="./images/cosmos_1159482586.jpeg" alt="Story — Un rêve devenu réalité" style="filter: grayscale(100%);" loading="lazy" />
           <div class="story-header">
             <div class="story-user">
-              <img src="./images/7.jpeg" class="story-avatar" / loading="lazy" alt="MORE Experience Visual">
+              <img src="./images/cosmos_105397273.jpeg" class="story-avatar" alt="Avatar" loading="lazy" />
               <span>clara.ven</span> <span style="opacity:0.5;">2h</span>
             </div>
-            <span>âœ•</span>
+            <span>✕</span>
           </div>
           <div class="story-footer">
             <p class="story-text">Un rêve devenu réalité<br><span style="text-decoration:underline;">@more.experiences</span></p>
             <div class="story-input">
               <span>Envoyer un message</span>
-              <span>â™¡ âž¦</span>
+              <span>♡ ➦</span>
             </div>
           </div>
         </a>
+      </div>
+
+      <!-- Col 2: square + portrait -->
+      <div class="am-col am-col-2">
+        <a href="#" class="am-item aspect-square">
+          <img src="./images/cosmos_1930580067.jpeg" alt="Moment intime" loading="lazy" />
+        </a>
+        <a href="#" class="am-item aspect-portrait">
+          <img src="./images/cosmos_2009750659.jpeg" alt="Portrait romantique" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Col 3: portrait + square -->
+      <div class="am-col am-col-3">
+        <a href="#" class="am-item aspect-portrait">
+          <div class="play-btn"></div>
+          <img src="./images/cosmos_2110169448.jpeg" alt="Escapade en bord de mer" loading="lazy" />
+        </a>
+        <a href="#" class="am-item aspect-square">
+          <img src="./images/cosmos_896727462.jpeg" alt="Détails de la soirée" loading="lazy" />
+        </a>
+      </div>
+
+      <!-- Col 4: story-card -->
+      <div class="am-col am-col-4">
         <a href="#" class="am-item aspect-story story-card">
-          <img src="./images/5.jpeg" alt="Story" style="filter: grayscale(100%);" / loading="lazy">
+          <img src="./images/cosmos_926842032.jpeg" alt="Story — Merci MORE" style="filter: grayscale(100%);" loading="lazy" />
           <div class="story-header">
             <div class="story-user">
-              <img src="./images/7.jpeg" class="story-avatar" / loading="lazy" alt="MORE Experience Visual">
+              <img src="./images/cosmos_105397273.jpeg" class="story-avatar" alt="Avatar" loading="lazy" />
               <span>jules_prv</span> <span style="opacity:0.5;">5h</span>
             </div>
-            <span>âœ•</span>
+            <span>✕</span>
           </div>
           <div class="story-footer">
             <p class="story-text">Merci MORE<br>pour ce moment suspendu</p>
             <div class="story-input">
               <span>Envoyer un message</span>
-              <span>â™¡ âž¦</span>
+              <span>♡ ➦</span>
             </div>
           </div>
         </a>
       </div>
     </main>
 
-    <!-- VU PAR EUX (INSTA POSTS) -->
+    <!-- ═══════════════════════════════════════════════
+         INSTAGRAM FEED
+         ═══════════════════════════════════════════════ -->
     <section class="container" style="padding-bottom: 2rem;">
       <div class="section-header">
-        <h2>Vu par eux</h2>
-        <a href="#">VOIR PLUS âŸ¶</a>
+        <h2>Instagram Feed</h2>
+        <a href="#">VOIR PLUS ⟶</a>
       </div>
       <div class="insta-grid">
         <!-- Post 1 -->
         <div class="insta-card">
           <div class="insta-header">
-            <div class="insta-user"><img src="./images/7.jpeg" / loading="lazy" alt="MORE Experience Visual"> sarah_dmn <span>1h</span></div>
+            <div class="insta-user"><img src="./images/cosmos_105397273.jpeg" alt="sarah_dmn" loading="lazy" /> sarah_dmn <span>1h</span></div>
             <span style="color:var(--graphite);">...</span>
           </div>
-          <div class="insta-img"><img src="./images/4.jpeg" class="img-cover" / loading="lazy" alt="MORE Experience Visual"></div>
+          <div class="insta-img"><img src="./images/cosmos_945113702.jpeg" class="img-cover" alt="Amalfi Coast" loading="lazy" /></div>
           <div class="insta-footer">
             <p>Amalfi Coast</p>
             <span>Marriage Proposal</span>
@@ -162,10 +167,10 @@
         <!-- Post 2 -->
         <div class="insta-card">
           <div class="insta-header">
-            <div class="insta-user"><img src="./images/7.jpeg" / loading="lazy" alt="MORE Experience Visual"> mathis_ibr <span>2h</span></div>
+            <div class="insta-user"><img src="./images/cosmos_105397273.jpeg" alt="mathis_ibr" loading="lazy" /> mathis_ibr <span>2h</span></div>
             <span style="color:var(--graphite);">...</span>
           </div>
-          <div class="insta-img"><img src="./images/2.jpeg" class="img-cover" / loading="lazy" alt="MORE Experience Visual"></div>
+          <div class="insta-img"><img src="./images/cosmos_788873766.jpeg" class="img-cover" alt="Lake Como" loading="lazy" /></div>
           <div class="insta-footer">
             <p>Lake Como</p>
             <span>Anniversary Experience</span>
@@ -174,10 +179,10 @@
         <!-- Post 3 -->
         <div class="insta-card">
           <div class="insta-header">
-            <div class="insta-user"><img src="./images/7.jpeg" / loading="lazy" alt="MORE Experience Visual"> emma.fit <span>2h</span></div>
+            <div class="insta-user"><img src="./images/cosmos_105397273.jpeg" alt="emma.fit" loading="lazy" /> emma.fit <span>2h</span></div>
             <span style="color:var(--graphite);">...</span>
           </div>
-          <div class="insta-img"><img src="./images/5.jpeg" class="img-cover" / loading="lazy" alt="MORE Experience Visual"></div>
+          <div class="insta-img"><img src="./images/cosmos_458189247.jpeg" class="img-cover" alt="Santorini" loading="lazy" /></div>
           <div class="insta-footer">
             <p>Santorini</p>
             <span>Romantic Escape</span>
@@ -186,10 +191,10 @@
         <!-- Post 4 -->
         <div class="insta-card">
           <div class="insta-header">
-            <div class="insta-user"><img src="./images/7.jpeg" / loading="lazy" alt="MORE Experience Visual"> leo_brn <span>4h</span></div>
+            <div class="insta-user"><img src="./images/cosmos_105397273.jpeg" alt="leo_brn" loading="lazy" /> leo_brn <span>4h</span></div>
             <span style="color:var(--graphite);">...</span>
           </div>
-          <div class="insta-img"><img src="./images/2.jpeg" class="img-cover" / loading="lazy" alt="MORE Experience Visual"></div>
+          <div class="insta-img"><img src="./images/cosmos_70644383.jpeg" class="img-cover" alt="Provence" loading="lazy" /></div>
           <div class="insta-footer">
             <p>Provence</p>
             <span>Luxury Celebration</span>
@@ -198,10 +203,10 @@
         <!-- Post 5 -->
         <div class="insta-card">
           <div class="insta-header">
-            <div class="insta-user"><img src="./images/7.jpeg" / loading="lazy" alt="MORE Experience Visual"> inesmdl <span>5h</span></div>
+            <div class="insta-user"><img src="./images/cosmos_105397273.jpeg" alt="inesmdl" loading="lazy" /> inesmdl <span>5h</span></div>
             <span style="color:var(--graphite);">...</span>
           </div>
-          <div class="insta-img"><img src="./images/8.jpeg" class="img-cover" / loading="lazy" alt="MORE Experience Visual"></div>
+          <div class="insta-img"><img src="./images/cosmos_1123388353.jpeg" class="img-cover" alt="Marrakech" loading="lazy" /></div>
           <div class="insta-footer">
             <p>Marrakech</p>
             <span>Celebration</span>
@@ -210,71 +215,57 @@
       </div>
     </section>
 
-    <!-- LEURS MOTS (TESTIMONIALS) -->
+    <!-- ═══════════════════════════════════════════════
+         WHAT THEY SAY (TESTIMONIALS)
+         ═══════════════════════════════════════════════ -->
     <section class="container" style="padding-bottom: 2rem;">
       <div class="section-header">
-        <h2>Leurs mots</h2>
-        <a href="#">VOIR PLUS âŸ¶</a>
+        <h2>What They Say</h2>
+        <a href="#">VOIR PLUS ⟶</a>
       </div>
       <div class="testimonial-grid">
-        <!-- Testi 1 -->
+        <!-- Testimonial 1 -->
         <div class="testi-card">
           <div class="testi-header">
-            <p>C & J</p>
-            <span>Amalfi Coast<br>Marriage Proposal<br>12.05.2024</span>
+            <p>Clara &amp; Thomas</p>
+            <span>AMALFI, ITALY</span>
           </div>
-          <p class="testi-quote">"Je pensais lui offrir une demande. MORE a créé un souvenir que nous garderons toute notre vie."</p>
-          <span class="testi-footer">Avis vérifié</span>
+          <p class="testi-quote">"On a encore du mal à croire que ce moment était réel. Chaque détail était parfait."</p>
+          <span class="testi-footer">GOOGLE REVIEWS</span>
         </div>
-        <!-- Testi 2 -->
+        <!-- Testimonial 2 -->
         <div class="testi-card">
           <div class="testi-header">
-            <p>M & A</p>
-            <span>Lake Como<br>Anniversary Experience<br>21.06.2024</span>
+            <p>Sophie &amp; Marc</p>
+            <span>PARIS, FRANCE</span>
           </div>
-          <p class="testi-quote">"Tout était parfait, discret, élégant, émotionnel. Nous n'aurions pas pu rêver mieux."</p>
-          <span class="testi-footer">Avis vérifié</span>
+          <p class="testi-quote">"Ils ont transformé notre rêve en une soirée magique sur les toits de Paris."</p>
+          <span class="testi-footer">INSTAGRAM DM</span>
         </div>
-        <!-- Testi 3 -->
+        <!-- Testimonial 3 -->
         <div class="testi-card">
           <div class="testi-header">
-            <p>L & P</p>
-            <span>Paris<br>Luxury Celebration<br>03.07.2024</span>
+            <p>Lina &amp; Adam</p>
+            <span>SANTORINI, GREECE</span>
           </div>
-          <p class="testi-quote">"Une soirée magique, pensée dans les moindres détails. Inoubliable."</p>
-          <span class="testi-footer">Avis vérifié</span>
+          <p class="testi-quote">"Le coucher de soleil, les bougies, la musique... tout était exactement ce qu'on imaginait, en mieux."</p>
+          <span class="testi-footer">TRUSTPILOT</span>
         </div>
-        <!-- Testi 4 -->
+        <!-- Testimonial 4 -->
         <div class="testi-card">
           <div class="testi-header">
-            <p>S & N</p>
-            <span>Santorini<br>Romantic Escape<br>18.07.2024</span>
+            <p>Emma &amp; Jules</p>
+            <span>MARRAKECH, MOROCCO</span>
           </div>
-          <p class="testi-quote">"Un moment suspendu, juste nous et la beauté de l'instant."</p>
-          <span class="testi-footer">Avis vérifié</span>
+          <p class="testi-quote">"Une nuit sous les étoiles du désert. On n'oubliera jamais."</p>
+          <span class="testi-footer">WHATSAPP</span>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    
-    <!-- WHATSAPP CTA -->
-    <section class="cta-whatsapp-section">
-      <div class="cta-w-image">
-        <img src="./images/cosmos_245288959.jpeg" alt="MORE Experience" class="img-cover" / loading="lazy">
-      </div>
-      <div class="cta-w-content">
-        <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); font-family: var(--font-h1-h2); line-height: 1.1; margin-bottom: 1rem;">Un message<br>peut suffire.</h2>
-        <p style="color: var(--champagne-soft); font-family: var(--font-h3-lead); font-size: 0.9rem; margin-bottom: 2rem;">Parlez-nous du moment que vous voulez créer.</p>
-        <a href="https://wa.me/33667942463" class="btn-whatsapp">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right: 10px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Écrire sur WhatsApp
-        </a>
-        <p style="font-family: var(--font-body); font-size: 0.65rem; color: rgba(24,24,24,0.5); margin-top: 1rem;">Réponse privée. Échange humain. Sans engagement.</p>
-      </div>
-    </section>
-
-    <!-- MEGA FOOTER -->
+    <!-- ═══════════════════════════════════════════════
+         MEGA FOOTER (5 columns)
+         ═══════════════════════════════════════════════ -->
     <footer class="site-footer-mega">
       <div class="footer-top">
         <!-- Col 1: Brand -->
@@ -331,5 +322,6 @@
         <p>All rights reserved. | Mentions Légales</p>
       </div>
     </footer>
+
   </body>
 </html>

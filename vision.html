@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -9,9 +9,141 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
     <script defer type="module" src="./src/main.js"></script>
+    <style>
+      /* Vision page-specific styles */
+      .split-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4vw;
+        align-items: center;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+      .split-image {
+        width: 100%;
+        aspect-ratio: 4/5;
+        overflow: hidden;
+      }
+      .mission-vision-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      .mv-block h3 {
+        margin-bottom: 0.8rem;
+      }
+      .mv-block p {
+        font-size: 0.95rem;
+        color: rgba(24,24,24,0.7);
+        line-height: 1.6;
+      }
+      .signature {
+        font-family: var(--font-h1-h2);
+        font-size: 2rem;
+        font-style: italic;
+        margin-top: 2rem;
+      }
+      .signature-title {
+        font-family: var(--font-h3-lead);
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(24,24,24,0.5);
+        margin-top: 0.5rem;
+      }
+      .pillars-section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+      .pillars-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2vw;
+        margin-top: 4rem;
+      }
+      .pillar-card {
+        overflow: hidden;
+      }
+      .pillar-card img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        display: block;
+      }
+      .pillar-content {
+        padding: 1.5rem 0;
+      }
+      .pillar-content h3 {
+        margin-bottom: 0.8rem;
+      }
+      .pillar-content p {
+        font-size: 0.9rem;
+        color: rgba(24,24,24,0.7);
+        line-height: 1.6;
+      }
+      .final-banner {
+        position: relative;
+        width: 100%;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 6rem 4vw;
+        color: var(--white);
+        overflow: hidden;
+      }
+      .final-banner .home-banner-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+      .final-banner .home-banner-bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+      }
+      .final-banner .logo-icon {
+        height: 50px;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .final-banner h2 {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+      }
+      .final-banner .btn-outline-white {
+        position: relative;
+        z-index: 1;
+      }
+      @media (max-width: 1024px) {
+        .split-section {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .pillars-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .pillars-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body style="background-color: var(--ivory);">
-    
+
     <!-- TRANSPARENT HEADER (WITH DESKTOP LINKS) -->
     <header class="home-header">
       <div class="home-header-left">
@@ -40,15 +172,14 @@
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Archives</a>
-      <a href="./vision.html">ÀÀ propos</a>
+      <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
     <!-- MAIN HERO -->
     <section class="home-hero" style="height: 90vh;">
       <div class="home-hero-bg">
-        <!-- Couple looking at sunset -->
-        <img src="./images/3.jpeg" alt="Sunset Couple" class="img-cover" style="object-position: center;" / loading="lazy">
+        <img src="./images/cosmos_548671295.jpeg" alt="About MORE" class="img-cover" style="object-position: center;" />
       </div>
       <div class="home-hero-content">
         <p class="subtitle" style="color:var(--white); margin-bottom:1rem;">ABOUT MORE</p>
@@ -64,21 +195,20 @@
         <h2>More than a moment.<br>A memory for life.</h2>
       </div>
       <div style="padding-top: 1rem;">
-        <p>At MORE, we believe love deserêves more than beautiful places.</p>
-        <p>It deserêves intention.<br>It deserêves artistry.<br>It deserêves to be remembered forever.</p>
+        <p>At MORE, we believe love deserves more than beautiful places.</p>
+        <p>It deserves intention.<br>It deserves artistry.<br>It deserves to be remembered forever.</p>
         <p>We exist to transform emotions into experiences and experiences into lifelong memories.</p>
       </div>
     </section>
 
     <!-- OUR MISSION & VISION -->
     <section style="background-color: #F8F5EF; padding: 6rem 0;">
-      <div class="container split-section" style="padding: 0;">
+      <div class="container split-section" style="padding-top: 0; padding-bottom: 0;">
         <div class="split-image">
-          <!-- Archway image -->
-          <img src="./images/5.jpeg" alt="Italian Archway" class="img-cover" / loading="lazy">
+          <img src="./images/cosmos_246000094.jpeg" alt="Mission &amp; Vision" class="img-cover" loading="lazy" />
         </div>
         <div style="padding-top: 2rem;">
-          <p class="subtitle subtitle-line" style="margin-bottom: 3rem;">OUR MISSION & VISION</p>
+          <p class="subtitle subtitle-line" style="margin-bottom: 3rem;">OUR MISSION &amp; VISION</p>
           <div class="mission-vision-blocks">
             <div class="mv-block">
               <p class="subtitle" style="font-size:0.6rem; color:var(--graphite); margin-bottom:1rem;">MISSION</p>
@@ -108,9 +238,8 @@
         <div class="signature">More.</div>
         <p class="signature-title">FOUNDER, MORE</p>
       </div>
-      <div class="split-image" style="background:transparent; height: 700px;">
-        <!-- Founder portrait -->
-        <img src="./images/7.jpeg" alt="Founder Portrait" class="img-cover" / loading="lazy">
+      <div class="split-image" style="height: 700px;">
+        <img src="./images/cosmos_1563972361.jpeg" alt="Founder Portrait" class="img-cover" loading="lazy" />
       </div>
     </section>
 
@@ -122,33 +251,33 @@
           <h2 style="font-size: 2.5rem; line-height: 1.1;">The emotions<br>we design<br>around.</h2>
         </div>
         <div class="pillars-cards">
-          <!-- Pillar 1 -->
+          <!-- Pillar 1: Trust -->
           <div class="pillar-card">
-            <img src="./images/2.jpeg" alt="Trust" / loading="lazy">
+            <img src="./images/cosmos_393313280.jpeg" alt="Trust" loading="lazy" />
             <div class="pillar-content">
               <h3>Trust</h3>
               <p>Guidance.<br>Confidence.<br>Reassurance.</p>
             </div>
           </div>
-          <!-- Pillar 2 -->
+          <!-- Pillar 2: Elevation -->
           <div class="pillar-card">
-            <img src="./images/4.jpeg" alt="Elevation" / loading="lazy">
+            <img src="./images/cosmos_411292309.jpeg" alt="Elevation" loading="lazy" />
             <div class="pillar-content">
               <h3>Elevation</h3>
               <p>Beauty.<br>Aspiration.<br>Extraordinary experiences.</p>
             </div>
           </div>
-          <!-- Pillar 3 -->
+          <!-- Pillar 3: Connection -->
           <div class="pillar-card">
-            <img src="./images/8.jpeg" alt="Connection" / loading="lazy">
+            <img src="./images/cosmos_416043126.jpeg" alt="Connection" loading="lazy" />
             <div class="pillar-content">
               <h3>Connection</h3>
               <p>Intimacy.<br>Shared emotions.<br>Presence.</p>
             </div>
           </div>
-          <!-- Pillar 4 -->
+          <!-- Pillar 4: Memory -->
           <div class="pillar-card">
-            <img src="./images/6.jpeg" alt="Memory" / loading="lazy">
+            <img src="./images/cosmos_973128048.jpeg" alt="Memory" loading="lazy" />
             <div class="pillar-content">
               <h3>Memory</h3>
               <p>Nostalgia.<br>Legacy.<br>Lasting impact.</p>
@@ -161,29 +290,11 @@
     <!-- FINAL BANNER -->
     <section class="final-banner">
       <div class="home-banner-bg">
-        <img src="./images/1.jpeg" alt="Ocean Sunset" class="img-cover" / loading="lazy">
+        <img src="./images/cosmos_2020918112.jpeg" alt="Ocean Sunset" class="img-cover" loading="lazy" />
       </div>
       <img src="./images/logo-light.png" alt="MORE Logo" class="logo-icon" />
       <h2>We don't just create experiences.<br>We create memories that become part of your story.</h2>
       <a href="./contact.html" class="btn-outline-white" style="margin-top: 2rem;">BEGIN YOUR STORY</a>
-    </section>
-
-    <!-- FOOTER -->
-    
-    <!-- WHATSAPP CTA -->
-    <section class="cta-whatsapp-section">
-      <div class="cta-w-image">
-        <img src="./images/cosmos_245288959.jpeg" alt="MORE Experience" class="img-cover" / loading="lazy">
-      </div>
-      <div class="cta-w-content">
-        <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); font-family: var(--font-h1-h2); line-height: 1.1; margin-bottom: 1rem;">Un message<br>peut suffire.</h2>
-        <p style="color: var(--champagne-soft); font-family: var(--font-h3-lead); font-size: 0.9rem; margin-bottom: 2rem;">Parlez-nous du moment que vous voulez créer.</p>
-        <a href="https://wa.me/33667942463" class="btn-whatsapp">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right: 10px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Écrire sur WhatsApp
-        </a>
-        <p style="font-family: var(--font-body); font-size: 0.65rem; color: rgba(24,24,24,0.5); margin-top: 1rem;">Réponse privée. Échange humain. Sans engagement.</p>
-      </div>
     </section>
 
     <!-- MEGA FOOTER -->
@@ -243,6 +354,6 @@
         <p>All rights reserved. | Mentions Légales</p>
       </div>
     </footer>
-    
+
   </body>
 </html>

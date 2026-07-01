@@ -1,35 +1,36 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORE | Amalfi Proposal</title>
+    <title>MORE | The Amalfi Proposal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
     <script defer type="module" src="./src/main.js"></script>
   </head>
-  <body style="background-color: var(--white);">
-    <!-- TRANSPARENT HEADER -->
-    <header class="home-header">
-      <div class="home-header-left">
-        <span>MORE</span>
+  <body style="background-color: var(--ivory);">
+
+    <!-- STANDARD HEADER (dark text on ivory) -->
+    <header class="site-header">
+      <div style="flex: 1;">
+        <span style="font-family: var(--font-h3-lead); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">MORE</span>
       </div>
-      <div class="home-header-center">
+      <div style="flex: 1; display: flex; justify-content: center;">
         <a href="./index.html">
-          <img src="./images/logo-light.png" alt="MORE" />
+          <img src="./images/logo-dark.png" alt="MORE" style="height: 45px;" />
         </a>
       </div>
-      <div class="home-header-right">
-        <nav class="transparent-nav">
+      <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 2rem;">
+        <nav class="nav-links">
           <a href="./experiences.html">Expériences</a>
           <a href="./destinations.html">Destinations</a>
           <a href="./journal.html">Archives</a>
-          <a href="./vision.html">ÀÀ propos</a>
-          <a href="./contact.html" class="transparent-inquire">Inquire</a>
+          <a href="./vision.html">À propos</a>
+          <a href="./contact.html" class="nav-inquire">Inquire</a>
         </nav>
-        <span class="home-hamburger" id="mobile-menu-open" aria-label="Ouvrir le menu" role="button" tabindex="0">≡</span>
+        <span class="mobile-menu-btn" id="mobile-menu-open" aria-label="Ouvrir le menu" role="button" tabindex="0" style="font-size: 1.5rem; text-transform: none;">≡</span>
       </div>
     </header>
 
@@ -39,104 +40,75 @@
       <a href="./experiences.html">Expériences</a>
       <a href="./destinations.html">Destinations</a>
       <a href="./journal.html">Archives</a>
-      <a href="./vision.html">ÀÀ propos</a>
+      <a href="./vision.html">À propos</a>
       <a href="./contact.html">Inquire</a>
     </div>
 
-    <!-- PRODUCT HERO -->
-    <section class="home-hero" style="height: 90vh;">
-      <div class="home-hero-bg">
-        <!-- MainÀÀ proposal image -->
-        <img src="./images/3.jpeg" alt="Amalfi Proposal" class="img-cover" style="object-position: center;" / loading="lazy">
-      </div>
-      <div class="home-hero-content">
-        <h1 style="font-size: clamp(4rem, 6vw, 6rem); margin-bottom: 1rem;">Amalfi Proposal</h1>
-        <p style="font-family: var(--font-h1-h2); font-size: 1.5rem; margin-bottom: 2.5rem;">An unforgettable evening above the Mediterranean.</p>
-        <a href="#inquire" class="btn-outline-white">INQUIRE</a>
-      </div>
-    </section>
+    <!-- BACKLINK -->
+    <div class="container" style="padding-top: 2rem;">
+      <a href="./experiences.html" class="backlink">← Retour aux expériences</a>
+    </div>
 
-    <!-- PRODUCT GALLERY (Full width, white borders) -->
+    <!-- PRODUCT GALLERY (3 columns) -->
     <section class="product-gallery">
       <!-- Col 1 -->
       <div class="pg-col pg-col-1">
-        <div class="pg-item pg-landscape"><img src="./images/2.jpeg" alt="Table setup" / loading="lazy"></div>
-        <div class="pg-item pg-square" style="flex:1;"><img src="./images/4.jpeg" alt="Rings" / loading="lazy"></div>
+        <div class="pg-item pg-landscape"><img src="./images/cosmos_1868942636.jpeg" alt="Terrasse amalfitaine au crépuscule" loading="lazy" /></div>
+        <div class="pg-item pg-square" style="flex:1;"><img src="./images/cosmos_1953293394.jpeg" alt="Décoration florale sur-mesure" loading="lazy" /></div>
       </div>
       <!-- Col 2 -->
       <div class="pg-col pg-col-2">
-        <div class="pg-item pg-square"><img src="./images/3.jpeg" alt="Couple" / loading="lazy"></div>
-        <div class="pg-item pg-landscape" style="flex:1;"><img src="./images/2.jpeg" alt="Balcony" / loading="lazy"></div>
+        <div class="pg-item pg-portrait" style="flex:1;"><img src="./images/cosmos_245288959.jpeg" alt="Couple sur la côte amalfitaine" loading="lazy" /></div>
       </div>
       <!-- Col 3 -->
       <div class="pg-col pg-col-3">
-        <div class="pg-item pg-landscape"><img src="./images/5.jpeg" alt="Coast view" / loading="lazy"></div>
-        <div class="pg-item pg-portrait" style="flex:1;"><img src="./images/1.jpeg" alt="Stairs night" / loading="lazy"></div>
+        <div class="pg-item pg-landscape"><img src="./images/cosmos_2064289037.jpeg" alt="Vue sur la mer Tyrrhénienne" loading="lazy" /></div>
+        <div class="pg-item pg-square" style="flex:1;"><img src="./images/cosmos_197919993.jpeg" alt="Dîner aux chandelles" loading="lazy" /></div>
       </div>
     </section>
 
-    <!-- THE ESSENTIAL (Minimalist Text) -->
+    <!-- PRODUCT ESSENTIAL -->
     <section class="product-essential">
-      <h2 style="font-size: 3rem; font-weight: 300;">L'Essentiel</h2>
-      <p>Une terrasse entièrement privatisée dominant la mer Tyrrhénienne, sublimée par une scénographie florale sur-mesure et des centaines de bougies. Un chef privé et un photographe discret capturent l'instant oÃ¹ l'ordinaire devient éternel.</p>
+      <h2 style="font-size: 3rem; font-weight: 300;">The Amalfi Proposal</h2>
+      <p>Une terrasse entièrement privatisée dominant la mer Tyrrhénienne, sublimée par une scénographie florale sur-mesure et des centaines de bougies. Un chef privé et un photographe discret capturent l'instant où l'ordinaire devient éternel.</p>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ ACCORDION -->
     <section class="faq-container">
-      
       <div class="faq-item">
         <div class="faq-question">
-          <span>Que comprend exactement cette prestation ?</span>
+          <span>Combien de temps à l'avance faut-il réserver ?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>La prestation "Amalfi Proposal" inclut la privatisation totale du lieu pour la soirée, le design floral personnalisé selon vos goûts, la mise en place de l'éclairage romantique (bougies), un dîner gastronomique préparé par un chef privé (boissons incluses), et la présence invisible d'un photographe professionnel pour immortaliser le moment.</p>
+          <p>Pour garantir la disponibilité des lieux exclusifs sur la côte amalfitaine et de nos prestataires de confiance, nous recommandons de nous contacter au moins 3 à 4 mois à l'avance. Cependant, selon la période de l'année, des arrangements plus rapides sont parfois possibles.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>Pouvons-nous personnaliser le décor ou la musique ?</span>
+          <span>Quel est le budget moyen ?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>Absolument. Lors de notre première consultation, nous établirons ensemble l'ambiance que vous souhaitez créer. Qu'il s'agisse des fleurs préférées de votre partenaire, d'un violoniste jouant votre chanson ou d'un menu spécifique, chaque détail est ajusté pour raconter votre histoire.</p>
+          <p>Chaque expérience est sur-mesure. Nos prestations commencent à partir de 5 000€ et peuvent aller bien au-delà selon vos souhaits.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>Combien de temps Ã  l'avance faut-il réserêver ?</span>
+          <span>Peut-on personnaliser chaque détail ?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>Pour garantir la disponibilité des lieux exclusifs sur la côte amalfitaine et de nos prestataires de confiance, nous recommandons de nous contacter au moins 3 Ã  4 mois Ã  l'avance. Cependant, selon la période de l'année, des arrangements plus rapides sont parfois possibles.</p>
+          <p>Absolument. C'est notre raison d'être. Chaque fleur, chaque note de musique, chaque plat est choisi avec vous.</p>
         </div>
       </div>
-
     </section>
 
-    <!-- INQUIRE CALL TO ACTION -->
-    <section id="inquire" style="text-align: center; padding-bottom: 8rem;">
-      <a href="./contact.html" class="btn-solid-dark">COMMENCER LE RÃ‰CIT</a>
-    </section>
-
-    <!-- FOOTER -->
-    
-    <!-- WHATSAPP CTA -->
-    <section class="cta-whatsapp-section">
-      <div class="cta-w-image">
-        <img src="./images/cosmos_245288959.jpeg" alt="MORE Experience" class="img-cover" / loading="lazy">
-      </div>
-      <div class="cta-w-content">
-        <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); font-family: var(--font-h1-h2); line-height: 1.1; margin-bottom: 1rem;">Un message<br>peut suffire.</h2>
-        <p style="color: var(--champagne-soft); font-family: var(--font-h3-lead); font-size: 0.9rem; margin-bottom: 2rem;">Parlez-nous du moment que vous voulez créer.</p>
-        <a href="https://wa.me/33667942463" class="btn-whatsapp">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right: 10px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Écrire sur WhatsApp
-        </a>
-        <p style="font-family: var(--font-body); font-size: 0.65rem; color: rgba(24,24,24,0.5); margin-top: 1rem;">Réponse privée. Échange humain. Sans engagement.</p>
-      </div>
+    <!-- CTA BUTTON -->
+    <section style="text-align: center; padding-bottom: 8rem;">
+      <a href="./contact.html" class="btn-solid-dark">COMMENCER LE RÉCIT</a>
     </section>
 
     <!-- MEGA FOOTER -->
@@ -196,5 +168,6 @@
         <p>All rights reserved. | Mentions Légales</p>
       </div>
     </footer>
+
   </body>
 </html>
