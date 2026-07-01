@@ -130,6 +130,102 @@ h3 { font-family: var(--font-h3-lead); font-size: 1.2rem; letter-spacing: 0.05em
 }
 .btn-solid-dark:hover { background-color: transparent; color: var(--graphite); }
 
+/* ---------------------------------------------------
+   HOMEPAGE — BANNER STRIP
+   --------------------------------------------------- */
+.home-banner {
+  position: relative; width: 100%; height: 200px;
+  display: flex; justify-content: center; align-items: center; gap: 6vw;
+  overflow: hidden;
+}
+.home-banner-bg {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+}
+.home-banner-bg::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55); z-index: 1;
+}
+.home-banner span {
+  position: relative; z-index: 2;
+  font-family: var(--font-h1-h2); font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--white); font-weight: 300; letter-spacing: 0.05em;
+}
+
+/* ---------------------------------------------------
+   HOMEPAGE — CATEGORY GRID
+   --------------------------------------------------- */
+.home-categories { padding: 0; }
+.home-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.home-cat-card {
+  position: relative; overflow: hidden; display: block;
+  aspect-ratio: 3/4;
+}
+.home-cat-img { width: 100%; height: 100%; }
+.home-cat-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.home-cat-card:hover .home-cat-img img { transform: scale(1.05); }
+.home-cat-card:hover { opacity: 1; }
+.home-cat-title {
+  position: absolute; bottom: 2.5rem; left: 2.5rem;
+  font-family: var(--font-h1-h2); font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--white); font-weight: 400; z-index: 2;
+}
+.home-cat-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  z-index: 1; pointer-events: none;
+}
+
+/* ---------------------------------------------------
+   SPLIT SECTIONS (Vision page)
+   --------------------------------------------------- */
+.split-section {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6vw;
+  padding: 6rem 4vw; align-items: start;
+}
+.split-image { width: 100%; height: 500px; overflow: hidden; }
+.split-image img { width: 100%; height: 100%; object-fit: cover; }
+.mission-vision-blocks { display: flex; flex-direction: column; gap: 3rem; }
+.mv-block h3 { font-family: var(--font-h1-h2); font-size: 1.8rem; margin-bottom: 0.5rem; }
+.mv-block p { font-family: var(--font-body); font-size: 0.95rem; color: rgba(24,24,24,0.7); line-height: 1.6; }
+.signature { font-family: var(--font-h1-h2); font-size: 2.5rem; font-style: italic; margin-bottom: 0.3rem; }
+.signature-title { font-family: var(--font-h3-lead); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(24,24,24,0.5); }
+
+/* PILLARS */
+.pillars-section { display: grid; grid-template-columns: 1fr 2fr; gap: 4vw; padding: 6rem 4vw; }
+.pillars-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5vw; }
+.pillar-card { overflow: hidden; }
+.pillar-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; margin-bottom: 1rem; }
+.pillar-content h3 { font-family: var(--font-h3-lead); font-size: 1rem; letter-spacing: 0.05em; font-weight: 400; margin-bottom: 0.5rem; }
+.pillar-content p { font-family: var(--font-body); font-size: 0.85rem; color: rgba(24,24,24,0.6); line-height: 1.5; }
+
+/* FINAL BANNER */
+.final-banner {
+  position: relative; width: 100%; height: 60vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; color: var(--white); overflow: hidden;
+}
+.final-banner .home-banner-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.final-banner .home-banner-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1; }
+.final-banner .logo-icon { height: 40px; margin-bottom: 2rem; position: relative; z-index: 2; }
+.final-banner h2 { position: relative; z-index: 2; max-width: 700px; font-weight: 300; margin-bottom: 1rem; }
+.final-banner a { position: relative; z-index: 2; }
+
+/* ---------------------------------------------------
+   ARCHIVES HERO FIX (prevent overlap)
+   --------------------------------------------------- */
+.archives-hero { height: 70vh; justify-content: center; padding: 0; text-align: center; }
+.archives-hero .home-hero-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+@media (max-width: 1024px) {
+  .home-grid-3 { grid-template-columns: 1fr; }
+  .home-cat-card { aspect-ratio: 16/9; }
+  .split-section { grid-template-columns: 1fr; }
+  .pillars-section { grid-template-columns: 1fr; }
+  .pillars-cards { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ---------------------------------------------------
    5-COLUMN MEGA FOOTER
@@ -232,9 +328,8 @@ h3 { font-family: var(--font-h3-lead); font-size: 1.2rem; letter-spacing: 0.05em
 /* ---------------------------------------------------
    ARCHIVES PAGE (JOURNAL) SPECIFICS
    --------------------------------------------------- */
-.archives-hero { height: 70vh; justify-content: center; padding: 0; text-align: center; }
 .archives-hero-bg::after { background: rgba(0,0,0,0.3); }
-.archives-tabs { display: flex; justify-content: center; gap: 4rem; padding: 2rem 0; border-bottom: 1px solid var(--gray-line); margin: 0 4vw 4rem; }
+.archives-tabs { display: flex; justify-content: center; gap: 4rem; padding: 2rem 0; border-bottom: 1px solid var(--gray-line); margin: 0 4vw 4rem; position: relative; z-index: 1; background: var(--ivory); }
 .archives-tabs span { font-family: var(--font-h3-lead); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--graphite); opacity: 0.5; cursor: pointer; padding-bottom: 0.5rem; transition: opacity 0.3s; }
 .archives-tabs span.active { opacity: 1; border-bottom: 2px solid var(--graphite); }
 .archives-tabs span:hover { opacity: 1; }
